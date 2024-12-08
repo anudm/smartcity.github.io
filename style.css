@@ -9,101 +9,116 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f7f8fa;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header */
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 3rem 2rem;
     text-align: center;
-    border-radius: 12px;
-    width: 100%;
-    margin-bottom: 30px;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+header .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 4px solid white;
 }
 
 header h1 {
     font-size: 2.5rem;
-    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 header p {
     font-size: 1.2rem;
-    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+header .btn {
+    background-color: white;
+    color: #4CAF50;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+header .btn:hover {
+    background-color: #45a049;
+    color: white;
 }
 
 /* Main Section */
 main {
-    width: 100%;
     max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Section Titles */
 h2 {
-    color: #4CAF50;
     font-size: 1.8rem;
-    font-weight: 600;
-    border-bottom: 2px solid #4CAF50;
-    padding-bottom: 0.5rem;
-}
-
-/* Section Content */
-section {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-ul li strong {
     color: #4CAF50;
+    margin-bottom: 1rem;
 }
 
-/* Definition List */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.post-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-card h3 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-bottom: 0.8rem;
+}
+
+.post-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Portfolio Info */
 dl {
-    margin-top: 1.5rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 dl dt {
     font-weight: bold;
-    color: #333;
-    margin-bottom: 0.5rem;
+    color: #4CAF50;
+    margin-top: 1rem;
 }
 
 dl dd {
-    margin-left: 1.5rem;
-    color: #555;
-}
-
-/* Blockquote */
-blockquote {
-    font-style: italic;
-    color: #555;
-    border-left: 4px solid #4CAF50;
-    padding-left: 1rem;
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    margin: 0;
+    color: #333;
 }
 
 /* Footer */
@@ -124,41 +139,7 @@ footer {
         font-size: 1rem;
     }
 
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    ul li {
-        font-size: 1rem;
-    }
-
-    blockquote {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    main {
-        padding: 10px;
-    }
-
-    section {
-        padding: 1.5rem;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    h2 {
-        font-size: 1.4rem;
-    }
-
-    ul li {
-        font-size: 0.95rem;
-    }
-
-    blockquote {
-        font-size: 0.9rem;
+    .post-card h3 {
+        font-size: 1.3rem;
     }
 }
