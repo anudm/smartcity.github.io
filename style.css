@@ -8,7 +8,7 @@
 /* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f7f8fa;
+    background-color: #e27bb1;
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -17,7 +17,7 @@ body {
 
 /* Header */
 header {
-    background-color: #4CAF50;
+    background-color: #eec4dc;
     color: white;
     text-align: center;
     padding: 4rem 2rem;
