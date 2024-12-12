@@ -3,223 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algorithm Visualizer</title>
+    <title>Dijkstra's Algorithm</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             margin: 20px;
         }
-
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        .input-field {
+            margin: 10px 0;
+        }
         button {
             background-color: green;
             color: white;
             border: none;
             padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
             font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
         }
-
         button:hover {
             background-color: darkgreen;
         }
-
-        input {
-            margin: 5px;
-        }
-
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 80%;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .highlight {
-            background-color: lightgreen;
+        .output {
+            margin-top: 20px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
-    <h1>Algorithm Visualizer</h1>
-
-    <div>
-        <button onclick="runQuickSort()">Quick Sort</button>
-        <button onclick="runHeapSort()">Heap Sort</button>
-        <button onclick="runDijkstra()">Dijkstra's Algorithm</button>
-        <button onclick="runKruskal()">Kruskal's Algorithm</button>
-    </div>
-
-    <h2 id="algorithmTitle">Select an Algorithm</h2>
-
-    <div id="algorithmContainer">
-        <!-- Content will be dynamically generated for each algorithm -->
+    <div class="container">
+        <h1>Dijkstra's Algorithm</h1>
+        <div class="input-field">
+            <label for="vertices">Enter number of vertices:</label>
+            <input type="number" id="vertices" min="1">
+        </div>
+        <div class="input-field">
+            <label for="source">Enter source vertex:</label>
+            <input type="number" id="source" min="0">
+        </div>
+        <div class="input-field">
+            <label for="costMatrix">Enter cost matrix (comma-separated rows):</label>
+            <textarea id="costMatrix" rows="5" cols="40"></textarea>
+        </div>
+        <button onclick="calculateShortestPath()">Find Shortest Path</button>
+        <div class="output" id="output"></div>
     </div>
 
     <script>
-        function runQuickSort() {
-            document.getElementById("algorithmTitle").textContent = "Quick Sort";
-            document.getElementById("algorithmContainer").innerHTML = "Quick Sort visualization will be implemented here.";
-        }
+        function calculateShortestPath() {
+            const vertices = parseInt(document.getElementById('vertices').value);
+            const source = parseInt(document.getElementById('source').value);
+            const costMatrixInput = document.getElementById('costMatrix').value;
 
-        function runHeapSort() {
-            document.getElementById("algorithmTitle").textContent = "Heap Sort";
-            document.getElementById("algorithmContainer").innerHTML = "Heap Sort visualization will be implemented here.";
-        }
-
-        function runDijkstra() {
-            document.getElementById("algorithmTitle").textContent = "Dijkstra's Algorithm";
-            document.getElementById("algorithmContainer").innerHTML = `
-                <p>Enter the number of vertices:</p>
-                <input type="number" id="numVertices" placeholder="Number of vertices">
-                <p>Enter the adjacency matrix (use 999 for no connection):</p>
-                <div id="matrixContainer"></div>
-                <button onclick="setupDijkstraMatrix()">Set Matrix</button>
-
-                <div id="dijkstraInputs" style="display: none;">
-                    <p>Enter the source vertex:</p>
-                    <input type="number" id="sourceVertex" placeholder="Source Vertex">
-                    <button onclick="runDijkstraAlgorithm()">Run Dijkstra's Algorithm</button>
-                </div>
-
-                <h2>Shortest Paths:</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Vertex</th>
-                            <th>Distance</th>
-                            <th>Path</th>
-                        </tr>
-                    </thead>
-                    <tbody id="shortestPathsTable"></tbody>
-                </table>
-            `;
-        }
-
-        function setupDijkstraMatrix() {
-            const numVertices = parseInt(document.getElementById("numVertices").value);
-            if (isNaN(numVertices) || numVertices <= 0) {
-                alert("Please enter a valid number of vertices.");
+            if (isNaN(vertices) || isNaN(source) || !costMatrixInput) {
+                alert('Please fill in all fields correctly.');
                 return;
             }
 
-            const container = document.getElementById("matrixContainer");
-            container.innerHTML = "";
-            for (let i = 0; i < numVertices; i++) {
-                let row = "";
-                for (let j = 0; j < numVertices; j++) {
-                    row += `<input type='number' id='matrix_${i}_${j}' placeholder='0' style='width: 50px;'>`;
-                }
-                container.innerHTML += `<div>${row}</div>`;
-            }
+            const costMatrix = costMatrixInput
+                .trim()
+                .split('\n')
+                .map(row => row.split(',').map(Number));
 
-            document.getElementById("dijkstraInputs").style.display = "block";
-        }
-
-        function runDijkstraAlgorithm() {
-            const numVertices = parseInt(document.getElementById("numVertices").value);
-            const sourceVertex = parseInt(document.getElementById("sourceVertex").value);
-
-            if (isNaN(sourceVertex) || sourceVertex < 0 || sourceVertex >= numVertices) {
-                alert("Please enter a valid source vertex.");
+            if (costMatrix.length !== vertices || costMatrix.some(row => row.length !== vertices)) {
+                alert('Cost matrix dimensions must match the number of vertices.');
                 return;
             }
 
-            const matrix = [];
-            for (let i = 0; i < numVertices; i++) {
-                matrix[i] = [];
-                for (let j = 0; j < numVertices; j++) {
-                    const value = parseInt(document.getElementById(`matrix_${i}_${j}`).value) || 999;
-                    matrix[i][j] = value;
-                }
-            }
+            const dist = Array(vertices).fill(Infinity);
+            const path = Array(vertices).fill(-1);
+            const vis = Array(vertices).fill(false);
 
-            const dist = Array(numVertices).fill(999);
-            const visited = Array(numVertices).fill(false);
-            const path = Array(numVertices).fill(-1);
-            dist[sourceVertex] = 0;
+            dist[source] = 0;
 
-            for (let count = 0; count < numVertices - 1; count++) {
-                let minDist = 999, minIndex = -1;
-
-                for (let v = 0; v < numVertices; v++) {
-                    if (!visited[v] && dist[v] < minDist) {
-                        minDist = dist[v];
-                        minIndex = v;
+            function minimum() {
+                let minDist = Infinity;
+                let minIndex = -1;
+                for (let i = 0; i < vertices; i++) {
+                    if (!vis[i] && dist[i] < minDist) {
+                        minDist = dist[i];
+                        minIndex = i;
                     }
                 }
+                return minIndex;
+            }
 
-                visited[minIndex] = true;
+            for (let count = 0; count < vertices - 1; count++) {
+                const u = minimum();
+                if (u === -1) break;
+                vis[u] = true;
 
-                for (let v = 0; v < numVertices; v++) {
-                    if (!visited[v] && matrix[minIndex][v] && dist[minIndex] != 999 && dist[minIndex] + matrix[minIndex][v] < dist[v]) {
-                        dist[v] = dist[minIndex] + matrix[minIndex][v];
-                        path[v] = minIndex;
+                for (let v = 0; v < vertices; v++) {
+                    if (!vis[v] && costMatrix[u][v] && dist[u] !== Infinity && dist[u] + costMatrix[u][v] < dist[v]) {
+                        dist[v] = dist[u] + costMatrix[u][v];
+                        path[v] = u;
                     }
                 }
             }
 
-            const table = document.getElementById("shortestPathsTable");
-            table.innerHTML = "";
-            for (let i = 0; i < numVertices; i++) {
-                const pathString = reconstructPath(path, sourceVertex, i);
-                table.innerHTML += `<tr><td>${i}</td><td>${dist[i]}</td><td>${pathString}</td></tr>`;
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '<h3>Results:</h3>';
+
+            for (let i = 0; i < vertices; i++) {
+                outputDiv.innerHTML += `Vertex: ${i}, Distance: ${dist[i]}, Path: ${getPath(i)}<br>`;
+            }
+
+            function getPath(v) {
+                const result = [];
+                while (v !== -1) {
+                    result.unshift(v);
+                    v = path[v];
+                }
+                return result.join(' -> ');
             }
         }
-
-        function reconstructPath(path, start, end) {
-            let result = "";
-            while (end != start && end != -1) {
-                result = ` -> ${end}` + result;
-                end = path[end];
-            }
-            return start + result;
-        }
-
-        function runKruskal() {
-            document.getElementById("algorithmTitle").textContent = "Kruskal's Algorithm";
-            document.getElementById("algorithmContainer").innerHTML = `
-                <p>Enter the number of vertices and edges:</p>
-                <input type="number" id="numVertices" placeholder="Number of vertices">
-                <input type="number" id="numEdges" placeholder="Number of edges">
-                <button onclick="setupInputs()">Set</button>
-
-                <div id="edgesInput" style="display: none;">
-                    <p>Enter edges (u, v, weight):</p>
-                    <div id="edgesContainer"></div>
-                    <button onclick="runKruskalAlgorithm()">Run Kruskal's Algorithm</button>
-                </div>
-
-                <h2>Edges:</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Edge</th>
-                            <th>Weight</th>
-                        </tr>
-                    </thead>
-                    <tbody id="edgesTable"></tbody>
-                </table>
-
-                <h2>Minimum Spanning Tree (MST):</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Edge</th>
-                            <th>Weight</th>
-                        </tr>
-                    </thead>
-                    <tbody id="mstTable"></tbody>
-                </table>
-
-                <h3 id="totalCost"></
+    </script>
+</body>
+</html>
