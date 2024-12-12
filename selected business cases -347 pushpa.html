@@ -141,102 +141,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algorithm Visualizer</title>
+    <title>Suratpur Algorithm Solutions</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: #fff;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
         }
         header {
-            background: rgba(0, 0, 0, 0.6);
+            background: #001f3f;
+            color: white;
             padding: 20px;
             text-align: center;
-            font-size: 1.5em;
+        }
+        main {
+            padding: 20px;
         }
         section {
-            padding: 20px;
+            background: white;
             margin: 20px auto;
-            max-width: 900px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
         }
         h2 {
-            text-align: center;
-            color: #ffd700;
+            color: #001f3f;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            background: #0074d9;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #005bb5;
         }
         pre {
-            background: #111;
+            background: #001f3f;
+            color: white;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 5px;
             overflow: auto;
-            font-family: "Courier New", Courier, monospace;
-        }
-        a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
         }
         footer {
             text-align: center;
             padding: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            background: #001f3f;
+            color: white;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Algorithm Visualizer for Suratpur</h1>
+        <h1>Algorithm Solutions for Suratpur</h1>
     </header>
-
-    <section>
-        <h2>Dijkstra's Algorithm</h2>
-        <p>Dijkstra's Algorithm is implemented to optimize traffic flow and public transport systems in Suratpur, ensuring minimal emissions and efficient commutes.</p>
-        <p><a href="#dijkstra-code">See the Code</a></p>
-    </section>
-
-    <section>
-        <h2>Merge Sort Algorithm</h2>
-        <p>Merge Sort is utilized for efficient data organization, such as sorting waste management tasks in Suratpur, helping reduce delays and enhance resource distribution.</p>
-        <p><a href="#merge-sort-code">See the Code</a></p>
-    </section>
-
-    <section id="dijkstra-code">
-        <h2>Dijkstra's Algorithm Code</h2>
-        <pre>
-// DIJEKSTRA'S ALGORITHM CODE
+    <main>
+        <section>
+            <h2>Dijkstra's Algorithm</h2>
+            <p>
+                Suratpur uses Dijkstra's algorithm to optimize the city's traffic systems. It ensures the shortest path for vehicles and minimizes delays during commutes. This implementation handles the complexity of real-world road networks effectively.
+            </p>
+            <a href="#dijkstra-code" class="btn">View Dijkstra's Code</a>
+        </section>
+        <section>
+            <h2>Merge Sort</h2>
+            <p>
+                For efficient task scheduling and resource allocation, Suratpur employs Merge Sort. This sorting algorithm organizes tasks based on priority, ensuring seamless city operations.
+            </p>
+            <a href="#merge-sort-code" class="btn">View Merge Sort Code</a>
+        </section>
+        <section id="dijkstra-code">
+            <h2>Dijkstra's Algorithm Code</h2>
+            <pre>
 #include<bits/stdc++.h>
 using namespace std;
 
-// Code from the uploaded file goes here...
-        </pre>
-    </section>
+auto init_dist(vector<vector<int>> &cost, vector<int> &dist, int src) 
+{
+    int n = dist.size();
+    for (int j = 0; j < n; j++) 
+    {
+        dist[j] = cost[src][j];
+    }
+    return min_element(begin(dist), end(dist));
+}
 
-    <section id="merge-sort-code">
-        <h2>Merge Sort Code</h2>
-        <pre>
-// MERGE SORT CODE
-#include<bits/stdc++.h>
+void update(vector<vector<int>> &c, vector<int> &vis, vector<int> &dist, int n) 
+{
+    for (int u = 0; u < n; u++) 
+    {
+        if (!vis[u]) 
+        {
+            for (int v = 0; v < n; v++) 
+            {
+                if (!vis[v] && c[u][v] != 99999) 
+                {
+                    dist[v] = min(dist[v], dist[u] + c[u][v]);
+                }
+            }
+        }
+    }
+}
+
+void start(vector<int> &vis, int src) 
+{
+    vis[src] = 1;
+}
+
+int min_vtx(vector<int> &dist, vector<int> &vis, int n) 
+{
+    int mv = -1;
+    int md = 99999;
+    for (int i = 0; i < n; i++) 
+    {
+        if (!vis[i] && dist[i] < md) 
+        {
+            md = dist[i];
+            mv = i;
+        }
+    }
+    return mv;
+}
+
+int main() 
+{
+    cout << "Enter the number of vertices: ";
+    int n;      
+    cin >> n;
+
+    cout << "Enter the source vertex: ";
+    int src;
+    cin >> src;
+
+    vector<vector<int>> c(n, vector<int>(n, 99999));
+    vector<int> dist(n, 99999), vis(n, 0);
+
+    cout << "Enter the cost adjacency matrix:\n";
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            cin >> c[i][j];
+            if (i == j) c[i][j] = 0;
+        }
+    }
+
+    dist[src] = 0;
+
+    for (int i = 0; i < n - 1; i++) 
+    {
+        int u = min_vtx(dist, vis, n);
+        if (u == -1) break;
+        start(vis, u);
+        update(c, vis, dist, n);
+    }
+
+    for (int i = 0; i < n; i++) 
+    {
+        if (dist[i] == 99999) 
+            cout << "INF\n";
+        else 
+            cout << dist[i] << "\n";
+    }
+
+    return 0;
+}
+            </pre>
+        </section>
+        <section id="merge-sort-code">
+            <h2>Merge Sort Code</h2>
+            <pre>
+#include <bits/stdc++.h>
 using namespace std;
 
-// Code from the uploaded file goes here...
-        </pre>
-    </section>
+void merge_2_sorted_arrays(vector <int> &a , vector <int> &b , vector <int> &v)
+{
+    int n1 = a.size() , n2 = b.size();
+    int i = 0, j = 0 , k = 0;
 
+    while(i < n1 and j < n2)
+    {
+        if(a[i] <= b[j]) v[k++] = a[i++];
+        else v[k++] = b[j++];
+    }
+
+    if(i == n1)
+    {
+        while(j < n2)
+        {
+            v[k++] = b[j++];
+        }
+    }
+    else if(j == n2) 
+    {
+        while(i < n1)
+        {
+            v[k++] = a[i++];
+        }
+    }
+    return;
+}
+void mergesort(vector <int> &v)
+{
+    int n = v.size() , j = 0;
+
+    if(n == 1) return;      // instead of taking whole in n > 1 (base case)
+
+    int n1 = n/2;
+    int n2 = n - n/2;
+    vector <int> a (n1) ,b(n2);
+
+    // copy the elements of vectors into (half half) arrays
+    for(int i=0; i<n1; i++) a[i] = v[i];
+    for(int i=n1; i<(n1+n2); i++) b[j++] = v[i];
+
+    // do it recursively for both a and b
+    mergesort(a);
+    mergesort(b);
+
+    // now we merge both , initially their size will be 1 so those 2 are merged
+
+    merge_2_sorted_arrays(a,b,v);
+}
+int main()
+{
+    vector <int> v;
+
+    v.push_back(18);
+    v.push_back(-1);
+    v.push_back(10);
+    v.push_back(0);
+    v.push_back(-5);
+    v.push_back(15);
+    v.push_back(-3);
+    v.push_back(-3);
+
+    for(int i=0; i<v.size(); i++) cout << v[i] << " ";
+    cout << endl;
+
+    mergesort(v);
+
+    for(int i=0; i<v.size(); i++) cout << v[i] << " ";
+
+    return 0;
+}
+            </pre>
+        </section>
+    </main>
     <footer>
-        <p>Developed by [Your Name] | <a href="https://github.com/">View on GitHub</a></p>
+        <p>Designed for Suratpur City | <a href="https://github.com">View on GitHub</a></p>
     </footer>
 </body>
 </html>
-    
-     
-   
-     
