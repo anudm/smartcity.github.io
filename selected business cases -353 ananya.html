@@ -195,47 +195,33 @@
 
     <div class="question">
         <p>2. What is space and time efficiency? Why are they important? Explain the different classes of problems and orders of growth.</p>
-        <p>Time Efficiency measures the computational time required to execute an algorithm and represents the number of basic operations performed by an algorithm
+        <p><body>
+    <h1>Algorithm Efficiency and Complexity</h1>
 
-Space Efficiency measures the memory (storage) required by an algorithm,tracking how much memory is the input size and determining how much additional memory is needed to solve a problem
+    <section>
+        <h2>Time Efficiency:</h2>
+        <p>Measures the computational time required to execute an algorithm and represents the number of basic operations performed by an algorithm.</p>
+    </section>
 
-A good algorithm executes quickly and saves space in the process. we should find a good medium of space and time (space and time complexity).In the world of computer science to perform better, we need to write algorithms that are time efficient and use less memory. It should be resource optimized,solving larger problems with limited computing power and giving Impact on users experience and system performance
+    <section>
+        <h2>Space Efficiency:</h2>
+        <p>Measures the memory (storage) required by an algorithm, tracking how much memory is consumed by the input size and determining how much additional memory is needed to solve a problem.</p>
+    </section>
 
-Complexity Classes and Orders of Growth
+    <section>
+        <h2>Key Principles:</h2>
+        <p>A good algorithm executes quickly and saves space in the process. We should find a balance between space and time efficiency (space and time complexity).</p>
+        <p>In the world of computer science, to perform better, we need to write algorithms that are time-efficient and use less memory. Algorithms should be resource-optimized, solving larger problems with limited computing power, and improving user experience and system performance.</p>
+    </section>
 
-Big O Notation (Worst-Case Complexity) Describes the upper bound of algorithm’s growth rate:
-
-O(1) - Constant Time
-
-It has fixed runtime regardless of input size Examples: Array access, simple arithmetic operations
-
-O(log n) - Logarithmic Time
-
-it Runtime grows logarithmically Examples: balanced tree operations
-
-O(n) - Linear Time
-
-Runtime grows linearly with input size Examples: Linear traversing an array
-
-O(n log n) - Linearithmic Time
-
-Efficient sorting algorithms Examples: Merge sort, heap sort
-
-O(n²) - Quadratic Time
-
-Nested iterations Examples: Bubble sort, simple nested loops
-
-O(2ⁿ) - Exponential Time
-
-Runtime doubles with each input addition Examples: Recursive Fibonacci, brute-force combinatorial problems
-
-O(n!) - Factorial Time
-
-Extremely inefficient Examples: Traveling salesman problem (brute force)</p>
+    <section>
+        <h2>Complexity Classes and Orders of Growth:</h2>
+        <p><strong>Big O Notation (Worst-Case Complexity):</strong> Describes the upper bound of an algorithm’s growth rate:</p>
+        <ul></p>
     </div>
 
     <div class="question">
-        <p>3. Takeaway from different design principles from Chapter 2 (can use the notes provided).</p>p
+        <p>3. Takeaway from different design principles from Chapter 2 (can use the notes provided).</p>
         <p> <h2>Decomposition:</h2>
         <p>Break complex problems into smaller, manageable pieces to simplify and solve them effectively.</p>
     
@@ -442,76 +428,128 @@ Web Crawlers: Searching the internet by following links between websites.</LI></
 
     <div class="question">
         <p>7. Deliberate on sorting and searching algorithms, the technique behind each, and how they connect to the real world.</p>
-       <p><LI>Bubble Sort:Brute force technique
+       <p><section>
+        <h2>Sorting Algorithms</h2>
 
-How it works: Compares adjacent items and swaps them if they’re out of order. This process continues until the list is sorted.
-Real-world example: Imagine sorting a deck of cards by comparing two cards at a time and swapping them until the whole deck is in order.
-Use: Best for small datasets, but inefficient for large ones.</LI>
-<LI>Selection Sort:comparision
+        <h3>Bubble Sort:</h3>
+        <ul>
+            <li><strong>How it works:</strong> Compares adjacent items and swaps them if they’re out of order. Repeats until the list is sorted.</li>
+            <li><strong>Real-world example:</strong> Sorting a deck of cards by comparing two cards at a time and swapping them.</li>
+            <li><strong>Use:</strong> Best for small datasets, inefficient for large ones.</li>
+        </ul>
 
-How it works: Finds the smallest item in the list, moves it to the front, then repeats for the rest of the list.
-Real-world example: Think of organizing books on a shelf by picking the shortest book first and putting it at the start.
-Use: Efficient in situations where minimizing the number of swaps is important, but still not the fastest for large datasets.</LI>
-<LI>Insertion Sort:decrease and conquer technique
+        <h3>Selection Sort:</h3>
+        <ul>
+            <li><strong>How it works:</strong> Finds the smallest item, moves it to the front, and repeats for the rest of the list.</li>
+            <li><strong>Real-world example:</strong> Organizing books by picking the shortest book first.</li>
+            <li><strong>Use:</strong> Useful when minimizing swaps, but not the fastest for large datasets.</li>
+        </ul>
 
-How it works: Builds the sorted list one item at a time by inserting each item in its correct position.
-Real-world example: This is like sorting a deck of cards in your hands, picking each card and placing it in the right position.
-Use: Great for small or almost sorted datasets.</LI>
-<LI>Merge Sort:divide and conquer
+        <h3>Insertion Sort:</h3>
+        <ul>
+            <li><strong>How it works:</strong> Builds a sorted list one item at a time by inserting each item in its correct position.</li>
+            <li><strong>Real-world example:</strong> Sorting a deck of cards by picking and placing cards in the right order.</li>
+            <li><strong>Use:</strong> Great for small or nearly sorted datasets.</li>
+        </ul>
+           <h3>Merge Sort:</h3>
+        <ul>
+            <li><strong>How it works:</strong> Splits the list, sorts each part, and merges them back together.</li>
+            <li><strong>Real-world example:</strong> Sorting papers by dividing them into smaller stacks, sorting, and combining them.</li>
+            <li><strong>Use:</strong> Ideal for large datasets and external sorting.</li>
+        </ul>
 
-How it works: Splits the list into smaller parts, sorts each part, and then merges them back together in order.
-Real-world example: Like sorting a large stack of papers by dividing them into smaller stacks, sorting each, and combining them.
-Use: Good for large datasets and external sorting.</LI>
-<LI>Quick Sort:divide and conquer
+        <h3>Quick Sort:</h3>
+        <ul>
+            <li><strong>How it works:</strong> Picks a pivot, places smaller elements on one side, larger ones on the other, and repeats.</li>
+            <li><strong>Real-world example:</strong> Dividing a group by height into smaller groups and sorting each.</li>
+            <li><strong>Use:</strong> Fast for large datasets, but pivot choice matters.</li>
+        </ul>
 
-How it works: Picks a "pivot" element and sorts the list by placing smaller elements on one side and larger on the other. It then repeats for each side.
-Real-world example: It's like dividing a group of people by height into two groups and then doing the same for each group until everyone is sorted.
-Use: Fast and efficient for large datasets, but can be slow if the pivot choice is poor.</LI>
-<LI>Heap Sort:transform and conquer
+        <h3>Heap Sort:</h3>
+        <ul>
+            <li><strong>How it works:</strong> Builds a heap and repeatedly extracts the largest or smallest element for the sorted list.</li>
+            <li><strong>Real-world example:</strong> Priority queue where highest-priority items are handled first.</li>
+            <li><strong>Use:</strong> Efficient for priority queues and structured sorting.</li>
+        </ul>
+    </section>
+<section>
+        <h2>Searching Algorithms</h2>
 
-How it works: Builds a heap (a tree-like structure) and repeatedly takes the largest (or smallest) value from the heap and places it in the sorted list.
-Real-world example: Think of a priority queue at an airport where the highest-priority passengers are always taken first.
-Use: Used in systems that require quick access to the highest or lowest values, such as priority queues.</LI>
-Searching Algorithms
-Searching algorithms are used to find a specific item from a list. Here are some of the most common ones:
+        <h3>Linear Search:</h3>
+        <ul>
+            <li><strong>How it works:</strong> Checks each item one by one until the target is found.</li>
+            <li><strong>Real-world example:</strong> Searching for a name in a phone book sequentially.</li>
+            <li><strong>Use:</strong> Simple but slow for large datasets.</li>
+        </ul>
 
-<LI>Linear Search:
+        <h3>Binary Search:</h3>
+        <ul>
+            <li><strong>How it works:</strong> Works on sorted lists, checks the middle, and narrows the search range by half each time.</li>
+            <li><strong>Real-world example:</strong> Finding a word in a dictionary by dividing the search range.</li>
+            <li><strong>Use:</strong> Very efficient for sorted lists.</li>
+        </ul>
+<h3>Breadth-First Search (BFS):</h3>
+        <ul>
+            <li><strong>How it works:</strong> Explores all nodes at the current level before moving to the next.</li>
+            <li><strong>Real-world example:</strong> Exploring all rooms on one floor of a building before moving to the next floor.</li>
+            <li><strong>Use:</strong> Best for finding the shortest path in unweighted graphs.</li>
+        </ul>
 
-How it works: Looks at each item one by one until it finds the target.
-Real-world example: Like searching for a name in a phone book, where you go through each entry until you find the one you're looking for.
-Use: Simple, but not efficient for large lists.</LI>
-<LI>Binary Search:
+        <h3>Depth-First Search (DFS):</h3>
+        <ul>
+            <li><strong>How it works:</strong> Goes as deep as possible along one path before backtracking and trying another.</li>
+            <li><strong>Real-world example:</strong> Exploring a maze by going deep down one path until a dead end.</li>
+            <li><strong>Use:</strong> Useful for exploring all paths or solutions in puzzles and games.</li>
+        </ul>
+    </section>
 
-How it works: Only works on sorted lists. It checks the middle element, then ignores half of the list and repeats the process on the other half.
-Real-world example: Imagine you’re looking for a word in a dictionary. You open to the middle, decide if the word is before or after, and keep narrowing down.
-Use: Very efficient for searching in large sorted lists.</LI>
-
-
-<LI>Breadth-First Search (BFS):
-How it works: Explores all the nodes at the current level before moving to the next level. It uses a queue to keep track of nodes to visit.
-Real-world example: Imagine exploring all rooms in a building floor by floor, starting from your current position and then moving to the next floor once you're done with the current one.
-Use: BFS is great for finding the shortest path in unweighted graphs, like mapping out the shortest way from one place to another.</LI>
-<LI>Depth-First Search (DFS):
-How it works: Starts at the root and explores as deep as possible along one path before backtracking and trying another path.
-Real-world example: Think of exploring a maze. You keep following one path until you hit a dead-end, then go back and try another path.
-Use: DFS is useful for exploring all possible paths and checking if a solution exists in puzzles or games.</LI>
-Real-World Connections:
-Sorting: Sorting is used everywhere, from organizing files on your computer, arranging products in a store by price, or sorting cards by suit and value.
-Searching: Searching is essential in almost every task, like looking for a contact in your phone or finding a book in a library.
-BFS: BFS is used in GPS systems to find the shortest route or in social networks to find connections (friends of friends).
-DFS: DFS is used in puzzle-solving (like mazes or Sudoku) and in games for exploring all possible moves.</p>
+    <section>
+        <h2>Real-World Connections</h2>
+        <ul>
+            <li><strong>Sorting:</strong> Used in organizing files, arranging products, or sorting cards.</li>
+            <li><strong>Searching:</strong> Essential for finding contacts, books, or other data.</li>
+            <li><strong>BFS:</strong> Helps in GPS systems to find the shortest routes and in social networks to find connections.</li>
+            <li><strong>DFS:</strong> Useful for puzzle-solving and exploring all possible moves in games.</li>
+        </ul>
+    </section>
+</p>
     </div>
 
     <div class="question">
         <p>8. Discuss the importance of graph algorithms with respect to spanning trees and shortest paths.</p>
-        <p>Graph algorithms deal with problems involving graphs like finding shortest paths, spanning trees, and connectivity.
+        <p><h3>Dijkstra's Algorithm:</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Finds the shortest path from a source node to all other nodes.</li>
+            <li><strong>Type:</strong> Single-source shortest path algorithm.</li>
+            <li><strong>Use:</strong> Best for weighted graphs with non-negative weights.</li>
+        </ul>
 
-Dijkstra's Algorithm: Finds the shortest path from a source node to all other nodes.(one pair shortest path)
-Floyd-Warshall Algorithm: Calculates shortest paths between all pairs of nodes.(all pair shortest path)
+        <h3>Floyd-Warshall Algorithm:</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Calculates shortest paths between all pairs of nodes.</li>
+            <li><strong>Type:</strong> All-pairs shortest path algorithm.</li>
+            <li><strong>Use:</strong> Suitable for dense graphs.</li>
+        </ul>
 
-Prim's Algorithm: Finds the Minimum Spanning Tree (MST) of a graph.
-Shortest Path: Finds the minimum path between nodes (e.g., Dijkstra’s, Bellman-Ford).
-Spanning Trees: Optimizes network design (e.g., Prim’s, Kruskal’s).</p>
+        <h3>Prim's Algorithm:</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Finds the Minimum Spanning Tree (MST) of a graph.</li>
+            <li><strong>Type:</strong> Greedy algorithm.</li>
+            <li><strong>Use:</strong> Ideal for network design and minimizing total connection cost.</li>
+        </ul>
+
+        <h3>Shortest Path:</h3>
+        <ul> <li><strong>Purpose:</strong> Finds the minimum path between nodes.</li>
+            <li><strong>Examples:</strong> Dijkstra’s, Bellman-Ford algorithms.</li>
+            <li><strong>Use:</strong> Navigation systems and network optimization.</li>
+        </ul>
+
+        <h3>Spanning Trees:</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Optimizes network design by connecting all nodes with minimal edges.</li>
+            <li><strong>Examples:</strong> Prim’s, Kruskal’s algorithms.</li>
+            <li><strong>Use:</strong> Efficient for designing layouts like electrical grids or road networks.</li>
+        </ul></p>
     </div>
 
     <div class="question">
