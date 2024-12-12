@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kruskal's Algorithm Visualizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        input {
+            margin: 5px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .highlight {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kruskal's Algorithm Visualizer</h1>
+
+    <p>Enter the number of vertices and edges:</p>
+    <input type="number" id="numVertices" placeholder="Number of vertices">
+    <input type="number" id="numEdges" placeholder="Number of edges">
+    <button onclick="setupInputs()">Set</button>
+
+    <div id="edgesInput" style="display: none;">
+        <p>Enter edges (u, v, weight):</p>
+        <div id="edgesContainer"></div>
+        <button onclick="runKruskal()">Run Kruskal's Algorithm</button>
+    </div>
+
+    <h2>Edges:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Edge</th>
+                <th>Weight</th>
+            </tr>
+        </thead>
+        <tbody id="edgesTable"></tbody>
+    </table>
+
+    <h2>Minimum Spanning Tree (MST):</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Edge</th>
+                <th>Weight</th>
+            </tr>
+        </thead>
+        <tbody id="mstTable"></tbody>
+    </table>
+
+    <h3 id="totalCost"></h3>
+
+    <script>
+        let edges = [];
+        let numVertices;
+
+        function setupInputs() {
+            numVertices = parseInt(document.getElementById("numVertices").value);
+            const numEdges = parseInt(document.getElementById("numEdges").value);
+
+            if (isNaN(numVertices) || isNaN(numEdges) || numVertices <= 0 || numEdges <= 0) {
+                alert("Please enter valid numbers for vertices and edges.");
+                return;
+            }
+
+            const container = document.getElementById("edgesContainer");
+            container.innerHTML = "";
+
+            for (let i = 0; i < numEdges; i++) {
+                container.innerHTML += `
+                    <div>
+                        Edge ${i + 1}: 
+                        <input type="number" placeholder="u" id="u${i}">
+                        <input type="number" placeholder="v" id="v${i}">
+                        <input type="number" placeholder="weight" id="w${i}">
+                    </div>
+                `;
+            }
+
+            document.getElementById("edgesInput").style.display = "block";
+        }
+
+        function runKruskal() {
+            edges = [];
+            const edgesTable = document.getElementById("edgesTable");
+            edgesTable.innerHTML = "";
+
+            for (let i = 0; i < document.getElementById("edgesContainer").children.length; i++) {
+                const u = parseInt(document.getElementById(`u${i}`).value);
+                const v = parseInt(document.getElementById(`v${i}`).value);
+                const w = parseInt(document.getElementById(`w${i}`).value);
+
+                if (isNaN(u) || isNaN(v) || isNaN(w)) {
+                    alert("Please fill out all fields correctly.");
+                    return;
+                }
+
+                edges.push({ u, v, w });
+                edgesTable.innerHTML += `<tr><td>${u} - ${v}</td><td>${w}</td></tr>`;
+            }
+
+            edges.sort((a, b) => a.w - b.w);
+            kruskal();
+        }
+
+        function kruskal() {
+            const parent = Array.from({ length: numVertices }, (_, i) => i);
+
+            const find = (i) => {
+                if (parent[i] === i) return i;
+                return (parent[i] = find(parent[i]));
+            };
+
+            const union = (u, v) => {
+                parent[find(u)] = find(v);
+            };
+
+            let mstCost = 0;
+            const mstTable = document.getElementById("mstTable");
+            mstTable.innerHTML = "";
+
+            for (const edge of edges) {
+                if (find(edge.u) !== find(edge.v)) {
+                    union(edge.u, edge.v);
+                    mstCost += edge.w;
+
+                    mstTable.innerHTML += `<tr class="highlight"><td>${edge.u} - ${edge.v}</td><td>${edge.w}</td></tr>`;
+                }
+            }
+
+            document.getElementById("totalCost").textContent = `Total Cost of MST: ${mstCost}`;
+        }
+    </script>
+</body>
+</html>
