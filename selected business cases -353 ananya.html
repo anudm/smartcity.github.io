@@ -195,42 +195,344 @@
 
     <div class="question">
         <p>2. What is space and time efficiency? Why are they important? Explain the different classes of problems and orders of growth.</p>
-        <p></p>
+        <p>Time Efficiency measures the computational time required to execute an algorithm and represents the number of basic operations performed by an algorithm
+
+Space Efficiency measures the memory (storage) required by an algorithm,tracking how much memory is the input size and determining how much additional memory is needed to solve a problem
+
+A good algorithm executes quickly and saves space in the process. we should find a good medium of space and time (space and time complexity).In the world of computer science to perform better, we need to write algorithms that are time efficient and use less memory. It should be resource optimized,solving larger problems with limited computing power and giving Impact on users experience and system performance
+
+Complexity Classes and Orders of Growth
+
+Big O Notation (Worst-Case Complexity) Describes the upper bound of algorithm’s growth rate:
+
+O(1) - Constant Time
+
+It has fixed runtime regardless of input size Examples: Array access, simple arithmetic operations
+
+O(log n) - Logarithmic Time
+
+it Runtime grows logarithmically Examples: balanced tree operations
+
+O(n) - Linear Time
+
+Runtime grows linearly with input size Examples: Linear traversing an array
+
+O(n log n) - Linearithmic Time
+
+Efficient sorting algorithms Examples: Merge sort, heap sort
+
+O(n²) - Quadratic Time
+
+Nested iterations Examples: Bubble sort, simple nested loops
+
+O(2ⁿ) - Exponential Time
+
+Runtime doubles with each input addition Examples: Recursive Fibonacci, brute-force combinatorial problems
+
+O(n!) - Factorial Time
+
+Extremely inefficient Examples: Traveling salesman problem (brute force)</p>
     </div>
 
     <div class="question">
         <p>3. Takeaway from different design principles from Chapter 2 (can use the notes provided).</p>p
-        <p></p>
+        <p> <h2>Decomposition:</h2>
+        <p>Break complex problems into smaller, manageable pieces to simplify and solve them effectively.</p>
+    
+        <h2>Pattern Recognition:</h2>
+        <p>Identify recurring patterns in problems to generalize solutions and make predictions.</p>
+    
+        <h2>Abstraction:</h2>
+        <p>Focus on essential features and ignore unnecessary details to simplify problem-solving.</p>
+    
+        <h2>Brave vs. Cautious Traversal:</h2>
+        <ul>
+            <li><strong>DFS (Brave):</strong> Explore deeply before backtracking.</li>
+            <li><strong>BFS (Cautious):</strong> Explore level by level.</li>
+        </ul>
+
+        <h2>Pruning:</h2>
+        <p>Skip unnecessary paths to save time and resources (e.g., N-Queen’s problem).</p>
+    
+        <h2>Lazy Propagation:</h2>
+        <p>Delay updates in data structures like segment trees for efficiency, especially with large datasets.</p>
+    
+        <h2>Sliding Window:</h2>
+        <p>Efficiently analyze overlapping sub-arrays, useful for tasks like finding maximum sums.</p>
+    
+        <h2>Level Order Traversal:</h2>
+        <p>Explore tree nodes level by level (similar to BFS).</p>
+        <h2>Hierarchical Data:</h2>
+        <p>Use parent-child relationships (e.g., family trees) to organize and manage information.</p>
+    
+        <h2>Edge Relaxation:</h2>
+        <p>Update shortest paths in algorithms like Dijkstra's by rechecking neighboring paths.</p>
+   
+        <h2>Balancing and Rotations:</h2>
+        <p>Prevent unbalanced trees in AVL and Red-Black trees to maintain efficient operations.</p>
+    
+        <h2>Kleene Closure:</h2>
+        <p>Find relationships in graphs and determine all possible connections (transitive closure).</p>
+   
+        <h2>Pre-Computing:</h2>
+        <p>Calculate and store frequently needed results in advance to save runtime (e.g., lookup tables).</p>
+    
+        <h2>Parental Dominance:</h2>
+        <p>Maintain efficiency in heaps by ensuring the root is the largest or smallest element.</p>
+    
+        <h2>Prefix and Suffix:</h2>
+        <p>Key for pattern matching and string operations in tasks like searching and bioinformatics.</p>
+    
+        <h2>Partitioning:</h2>
+        <p>Divide problems into smaller parts for recursion, widely used in sorting and searching.</p>
+       
+        <h2>Bit Manipulations:</h2>
+        <p>Use operations like AND, OR, XOR for memory-efficient algorithms (e.g., Fenwick trees).</p>
+    
+        <h2>Memoization:</h2>
+        <p>Store previous results in recursive algorithms to avoid redundant calculations.</p>
+    
+        <h2>Invariants:</h2>
+        <p>Conditions that stay constant during execution, ensuring correctness (e.g., maintaining sorted order).</p>
+    
+        <h2>Shortest Path Trees:</h2>
+        <p>Show shortest routes from a starting node, useful for navigation and network optimization.</p>
+    </p>
     </div>
 
     <div class="question">
         <p>4. The hierarchical data and how different tree data structures solve and optimize over the problem scenarios (tree, BST, AVL, 2-3, Red-Black, Heap, Trie).</p>
-        <p></p>
+        <p><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison of Trees</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparison of Trees for Problem Scenarios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Tree Type</th>
+                <th>Best For</th>
+                <th>Strength</th>
+                <th>Limitation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>BST</td>
+                <td>Sorted data with moderate updates</td>
+                <td>Simple structure</td>
+                <td>Can become unbalanced</td>
+            </tr>
+            <tr>
+                <td>AVL Tree</td>
+                <td>Frequent lookups and moderate insertions/deletions</td>
+                <td>Guarantees balance</td>
+                <td>Costly rotations</td>
+            </tr>
+            <tr>
+                <td>2-3 Tree</td>
+                <td>Predictable performance in all operations</td>
+                <td>Consistent height</td>
+                <td>Complexity of implementation</td>
+            </tr>
+            <tr>
+                <td>Red-Black Tree</td>
+                <td>Dynamic datasets with frequent updates</td>
+                <td>Fewer rotations than AVL</td>
+                <td>Slightly less balanced than AVL</td>
+            </tr>
+            <tr>
+                <td>Heap</td>
+                <td>Priority-based operations</td>
+                <td>Efficient min/max retrieval</td>
+                <td>Not suited for general searching</td>
+            </tr>
+            <tr>
+                <td>Trie</td>
+                <td>String data and prefix-based operations</td>
+                <td>Fast prefix search</td>
+                <td>High memory usage for sparse data</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html></p>
     </div>
 
     <div class="question">
         <p>5. The need of array query algorithms and their implications. Their applications and principles need to be discussed.</p>
-        <p></p>
+        <p>Principles of Array Query Algorithms
+
+<LI>Divide and Conquer - Breaking queries into smaller subproblems for efficient computation.</LI><LI> Dynamic Programming - Storing intermediate results to avoid redundant calculations. Optimization - Balancing preprocessing time with query time to achieve overall efficiency.
+</LI>
+<LI>Array Query Algorithms: Overview Core Purpose Array query algorithms are designed to efficiently retrieve, manipulate, or analyze information within large datasets, addressing challenges of:
+
+Fast information retrieval Complex data processing Minimizing computational complexity</LI>
+
+<LI>Binary Search(Binary index tree) Principle: Divide and conquer strategy Efficiency: O(log n) Requirements: Sorted array Applications: used in Large sorted databases
+</LI>
+<LI>Sliding Window Technique
+
+Principle: Maintain a window of elements Efficiency: O(n) Applications: used in Network traffic analysis and Signal processing</LI>
+
+<LI>Segment Tree
+Principle: Divide array into segments Efficiency: O(log n) Applications: Range min/max queries</LI></p>
     </div>
 
     <div class="question">
         <p>6. Differentiate between trees and graphs and their traversals. The applications of each.</p>
-       <p></p>
+       <p>Tree:
+
+A tree is a simple structure with one main "root" and branches that don’t loop back (no cycles).
+It is like a family tree where each person has only one parent (except for the root).
+Example: A folder structure on your computer.
+Graph:
+
+A graph is more complex. It can have cycles (loops) and no specific structure. Nodes (points) can be connected in many different ways, not necessarily hierarchically.
+Example: A map of cities connected by roads, where you can travel in multiple directions.
+<LI>Tree Traversals (Ways to visit nodes in a tree):
+In-Order: Visit left side, then the node, then right side.
+Used for: Sorting data in binary search trees.</LI>
+<LI>Pre-Order: Visit the node first, then the left side, and then the right side.
+Used for: Making a copy of the tree.</LI>
+<LI>Post-Order: Visit the left side first, then the right side, and finally the node.
+Used for: Deleting nodes.</LI>
+<LI>Level-Order (BFS): Visit nodes level by level from the root.
+Used for: Finding the shortest path in simple trees.</LI>
+<LI>Graph Traversals (Ways to visit nodes in a graph):
+DFS (Depth-First Search): Start at one node, go as deep as possible, and backtrack when needed.
+
+Used for: Solving mazes, finding connected components.</LI>
+<LI>BFS (Breadth-First Search): Visit neighbors first, then their neighbors, and so on.
+
+Used for: Finding the shortest path in simple graphs, like finding the shortest route on a map.</LI>
+Applications:
+<LI>Tree Applications:
+
+File System: Organizing folders and files.
+Binary Search Tree (BST): Efficiently finding data in databases.
+Decision Trees: Used in making decisions, like in machine learning.</LI>
+<LI>Graph Applications:
+
+Social Networks: Connections between people (friends, followers).
+Maps/Navigation: Finding the shortest route between cities or locations.
+Web Crawlers: Searching the internet by following links between websites.</LI></p>
     </div>
 
     <div class="question">
         <p>7. Deliberate on sorting and searching algorithms, the technique behind each, and how they connect to the real world.</p>
-       <p></p>
+       <p><LI>Bubble Sort:Brute force technique
+
+How it works: Compares adjacent items and swaps them if they’re out of order. This process continues until the list is sorted.
+Real-world example: Imagine sorting a deck of cards by comparing two cards at a time and swapping them until the whole deck is in order.
+Use: Best for small datasets, but inefficient for large ones.</LI>
+<LI>Selection Sort:comparision
+
+How it works: Finds the smallest item in the list, moves it to the front, then repeats for the rest of the list.
+Real-world example: Think of organizing books on a shelf by picking the shortest book first and putting it at the start.
+Use: Efficient in situations where minimizing the number of swaps is important, but still not the fastest for large datasets.</LI>
+<LI>Insertion Sort:decrease and conquer technique
+
+How it works: Builds the sorted list one item at a time by inserting each item in its correct position.
+Real-world example: This is like sorting a deck of cards in your hands, picking each card and placing it in the right position.
+Use: Great for small or almost sorted datasets.</LI>
+<LI>Merge Sort:divide and conquer
+
+How it works: Splits the list into smaller parts, sorts each part, and then merges them back together in order.
+Real-world example: Like sorting a large stack of papers by dividing them into smaller stacks, sorting each, and combining them.
+Use: Good for large datasets and external sorting.</LI>
+<LI>Quick Sort:divide and conquer
+
+How it works: Picks a "pivot" element and sorts the list by placing smaller elements on one side and larger on the other. It then repeats for each side.
+Real-world example: It's like dividing a group of people by height into two groups and then doing the same for each group until everyone is sorted.
+Use: Fast and efficient for large datasets, but can be slow if the pivot choice is poor.</LI>
+<LI>Heap Sort:transform and conquer
+
+How it works: Builds a heap (a tree-like structure) and repeatedly takes the largest (or smallest) value from the heap and places it in the sorted list.
+Real-world example: Think of a priority queue at an airport where the highest-priority passengers are always taken first.
+Use: Used in systems that require quick access to the highest or lowest values, such as priority queues.</LI>
+Searching Algorithms
+Searching algorithms are used to find a specific item from a list. Here are some of the most common ones:
+
+<LI>Linear Search:
+
+How it works: Looks at each item one by one until it finds the target.
+Real-world example: Like searching for a name in a phone book, where you go through each entry until you find the one you're looking for.
+Use: Simple, but not efficient for large lists.</LI>
+<LI>Binary Search:
+
+How it works: Only works on sorted lists. It checks the middle element, then ignores half of the list and repeats the process on the other half.
+Real-world example: Imagine you’re looking for a word in a dictionary. You open to the middle, decide if the word is before or after, and keep narrowing down.
+Use: Very efficient for searching in large sorted lists.</LI>
+
+
+<LI>Breadth-First Search (BFS):
+How it works: Explores all the nodes at the current level before moving to the next level. It uses a queue to keep track of nodes to visit.
+Real-world example: Imagine exploring all rooms in a building floor by floor, starting from your current position and then moving to the next floor once you're done with the current one.
+Use: BFS is great for finding the shortest path in unweighted graphs, like mapping out the shortest way from one place to another.</LI>
+<LI>Depth-First Search (DFS):
+How it works: Starts at the root and explores as deep as possible along one path before backtracking and trying another path.
+Real-world example: Think of exploring a maze. You keep following one path until you hit a dead-end, then go back and try another path.
+Use: DFS is useful for exploring all possible paths and checking if a solution exists in puzzles or games.</LI>
+Real-World Connections:
+Sorting: Sorting is used everywhere, from organizing files on your computer, arranging products in a store by price, or sorting cards by suit and value.
+Searching: Searching is essential in almost every task, like looking for a contact in your phone or finding a book in a library.
+BFS: BFS is used in GPS systems to find the shortest route or in social networks to find connections (friends of friends).
+DFS: DFS is used in puzzle-solving (like mazes or Sudoku) and in games for exploring all possible moves.</p>
     </div>
 
     <div class="question">
         <p>8. Discuss the importance of graph algorithms with respect to spanning trees and shortest paths.</p>
-        <p></p>
+        <p>Graph algorithms deal with problems involving graphs like finding shortest paths, spanning trees, and connectivity.
+
+Dijkstra's Algorithm: Finds the shortest path from a source node to all other nodes.(one pair shortest path)
+Floyd-Warshall Algorithm: Calculates shortest paths between all pairs of nodes.(all pair shortest path)
+
+Prim's Algorithm: Finds the Minimum Spanning Tree (MST) of a graph.
+Shortest Path: Finds the minimum path between nodes (e.g., Dijkstra’s, Bellman-Ford).
+Spanning Trees: Optimizes network design (e.g., Prim’s, Kruskal’s).</p>
     </div>
 
     <div class="question">
         <p>9. Discuss the different studied algorithm design techniques.</p>
-       <p></p>
+       <p>
+           Algorithm Design Techniques:
+<LI>Brute Force: Solve problems by trying all possible solutions, guaranteed to find the correct one but inefficient for large inputs.</LI>
+<LI>Divide and Conquer: Break a problem into smaller subproblems, solve them recursively, and combine results (e.g., Merge Sort).</LI>
+<LI>Decrease and Conquer: Reduce the problem size by solving a smaller instance of the problem and building up to the solution (e.g., Insertion Sort).</LI>
+<LI>Transform and Conquer: Transform the problem into an easier form and solve it more efficiently (e.g., binary search).</LI>
+<LI>Greedy Algorithm: Make the locally optimal choice at each step, hoping it leads to the global optimum (e.g., Huffman Coding).</LI>
+
+Algorithms:
+<LI>Boyer-Moore Algorithm: A string searching algorithm that efficiently finds a substring within a text by skipping sections of the text.
+<LI>Rabin-Karp Algorithm: Uses hashing to find a substring in a string, efficient for multiple pattern searches.
+<LI>Dijkstra’s Algorithm: Finds the shortest path between two nodes in a weighted graph by iteratively selecting the closest node.
+<LI>Floyd-Warshall Algorithm: Finds the shortest paths between all pairs of nodes in a weighted graph, using dynamic programming.
+<LI>Kruskal’s Algorithm: Finds the Minimum Spanning Tree (MST) by sorting edges and connecting nodes with the smallest weights without forming cycles.
+<LI>Prim’s Algorithm: Finds the MST by growing a tree one edge at a time, always selecting the smallest edge that connects a node to the tree.
+<LI>Warshall’s Algorithm: Computes the transitive closure of a directed graph, determining reachability between all pairs of vertices.
+       </p>
     </div>
 </body>
 </html>
