@@ -1,0 +1,104 @@
+DIJKSTRA'S ALGORITHM
+  
+#include <iostream>
+using namespace std;
+
+class dij {
+public:
+    int vertices;
+    int src;
+    int dist[10];
+    int path[10];
+    int cost_matrix[10][10];
+    int vis[10];
+
+    dij();
+    void read();
+    void print();
+    void shortest_path();
+    void updation();
+    int minimum(int dist[10], int vis[10]);
+};
+
+dij::dij() {
+    vertices = 0;
+    src = 0;
+    for (int i = 0; i < 10; i++) {
+        dist[i] = 999;
+        path[i] = -1;
+        vis[i] = 0;
+    }
+}
+
+void dij::read() {
+    cout << "Enter the number of vertices" << endl;
+    cin >> vertices;
+    cout << "Enter the src" << endl;
+    cin >> src;
+    cout << "Enter the cost matrix" << endl;
+    for (int i = 0; i < vertices; i++) {
+        for (int j = 0; j < vertices; j++) {
+            cin >> cost_matrix[i][j];
+        }
+    }
+}
+
+void dij::print() {
+    cout << "The number of vertices: " << vertices << endl;
+    cout << "The src vertex is: " << src << endl;
+    cout << "The cost matrix is:" << endl;
+    for (int i = 0; i < vertices; i++) {
+        for (int j = 0; j < vertices; j++) {
+            cout << cost_matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int dij::minimum(int dist[10], int vis[10]) {
+    int dist_min = 999;
+    int min_index = -1;
+    for (int i = 0; i < vertices; i++) {
+        if (vis[i] == 0 && dist[i] < dist_min) {
+            dist_min = dist[i];
+            min_index = i;
+        }
+    }
+    return min_index;
+}
+
+void dij::updation() {
+    int a = minimum(dist, vis);
+    vis[a] = 1;
+    for (int i = 0; i < vertices; i++) {
+        if (vis[i] == 0 && cost_matrix[a][i] && dist[a] != 999 && dist[a] + cost_matrix[a][i] < dist[i]) {
+            dist[i] = dist[a] + cost_matrix[a][i];
+            path[i] = a;
+        }
+    }
+}
+
+void dij::shortest_path() {
+    for (int i = 0; i < vertices; i++) {
+        dist[i] = cost_matrix[src][i];
+        path[i] = src;
+    }
+    dist[src] = 0;
+    vis[src] = 1;
+
+    for (int i = 0; i < vertices - 1; i++) {
+        updation();
+    }
+
+    for (int j = 0; j < vertices; j++) {
+        cout << "Vertex: " << j << ", Distance: " << dist[j] << ", Path: " << path[j] << endl;
+    }
+}
+
+int main() {
+    dij d;
+    d.read();
+    d.print();
+    d.shortest_path();
+    return 0;
+}
