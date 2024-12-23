@@ -1,1 +1,64 @@
+#include <iostream>
+
+using namespace std;
+
+const int max1 = 1000000;
+
+void floyd(int W[100][100], int n) {
+
+    int D[100][100];
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            D[i][j] = W[i][j];
+        }
+    }
+
+    
+    for (int k = 0; k < n; k++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (D[i][k] != max1 && D[k][j] != max1) {
+                    D[i][j] = min(D[i][j], D[i][k] + D[k][j]);
+                }
+            }
+        }
+    }
+
+    
+    cout << "Shortest path matrix: " << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (D[i][j] == max1)  
+                cout << "max1" << " ";
+            else
+                cout << D[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Enter the number of vertices: ";
+    cin >> n;
+
+    
+    int W[100][100];
+
+    cout << "Enter the weight matrix (use a large number for no path, max1):" << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> W[i][j];
+            if (W[i][j] == 0 && i != j) {
+                W[i][j] = max1;  
+            }
+        }
+    }
+
+    
+    floyd(W, n);
+
+    return 0;
+}
 
