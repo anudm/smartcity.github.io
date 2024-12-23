@@ -3,125 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dijkstra's Algorithm</title>
+    <title>Business Case: Agriculture Case Study</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 20px;
         }
-        .container {
-            max-width: 600px;
-            margin: auto;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 8px;
             text-align: center;
         }
-        .input-field {
-            margin: 10px 0;
+        .figure {
+            text-align: center;
+            margin: 20px 0;
         }
-        button {
-            background-color: green;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
+        .figure img {
+            max-width: 100%;
+            height: auto;
         }
-        button:hover {
-            background-color: darkgreen;
+        a {
+            color: blue;
+            text-decoration: none;
         }
-        .output {
-            margin-top: 20px;
-            text-align: left;
+        a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            color: red;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Dijkstra's Algorithm</h1>
-        <div class="input-field">
-            <label for="vertices">Enter number of vertices:</label>
-            <input type="number" id="vertices" min="1">
-        </div>
-        <div class="input-field">
-            <label for="source">Enter source vertex:</label>
-            <input type="number" id="source" min="0">
-        </div>
-        <div class="input-field">
-            <label for="costMatrix">Enter cost matrix (comma-separated rows):</label>
-            <textarea id="costMatrix" rows="5" cols="40"></textarea>
-        </div>
-        <button onclick="calculateShortestPath()">Find Shortest Path</button>
-        <div class="output" id="output"></div>
+    <h1>Business Case: Agriculture Case Study</h1>
+    <p><strong>Sub-task:</strong> Agricultural Tour</p>
+    <p><strong>SDG Goal:</strong> 11</p>
+    <p><strong>Target:</strong> 11.3, 11.A</p>
+    <p><strong>Indicators:</strong> 11.3.1, 11.A.1</p>
+
+    <p>Agriculture in cities and nearby areas supports SDG 11 by creating green spaces, reducing food insecurity, and improving the environment. Below are the specific targets and indicators:</p>
+    <ul>
+        <li><strong>Target 11.3:</strong> Better urban planning integrates urban agriculture to optimize land use.</li>
+        <li><strong>Indicator 11.3.1:</strong> Land consumption vs. population growth.</li>
+        <li><strong>Target 11.A:</strong> Agriculture connects urban areas with rural regions for sustainable development.</li>
+        <li><strong>Indicator 11.A.1:</strong> Cities with regional plans including agriculture.</li>
+    </ul>
+
+    <p>The agriculture officer occasionally visits different agricultural boards and farms to monitor their activities. The offices and farms visited, along with their numbers, are listed below:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sl. No.</th>
+                <th>Office/Farm Type</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Agricultural Research Centers</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Farms</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Market Yards</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Supply Chain Offices</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Farmers' Cooperatives</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The above data is based on the city design, and the cost was estimated for the travel between locations. Below is a representation of the routes:</p>
+
+    <div class="figure">
+        <img src="https://via.placeholder.com/600x400?text=Map+Placeholder" alt="Agriculture Travel Map">
+        <p><strong>Fig 1:</strong> Agriculture Travel Map</p>
     </div>
 
-    <script>
-        function calculateShortestPath() {
-            const vertices = parseInt(document.getElementById('vertices').value);
-            const source = parseInt(document.getElementById('source').value);
-            const costMatrixInput = document.getElementById('costMatrix').value;
+    <p>An optimal route is prepared for the agricultural officer using Dijkstra's algorithm. The data generated can be found in the file 
+        <a href="#" target="_blank">HERE</a>, and the code can be viewed 
+        <a href="#" target="_blank">HERE</a>. The code is implemented using a Heap data structure. The efficiency of the code is 
+        <em>|E|log|V|</em>, and the algorithm uses the greedy technique. This case study demonstrates how Dijkstra's algorithm can be used in real-world scenarios.</p>
 
-            if (isNaN(vertices) || isNaN(source) || !costMatrixInput) {
-                alert('Please fill in all fields correctly.');
-                return;
-            }
-
-            const costMatrix = costMatrixInput
-                .trim()
-                .split('\n')
-                .map(row => row.split(',').map(Number));
-
-            if (costMatrix.length !== vertices || costMatrix.some(row => row.length !== vertices)) {
-                alert('Cost matrix dimensions must match the number of vertices.');
-                return;
-            }
-
-            const dist = Array(vertices).fill(Infinity);
-            const path = Array(vertices).fill(-1);
-            const vis = Array(vertices).fill(false);
-
-            dist[source] = 0;
-
-            function minimum() {
-                let minDist = Infinity;
-                let minIndex = -1;
-                for (let i = 0; i < vertices; i++) {
-                    if (!vis[i] && dist[i] < minDist) {
-                        minDist = dist[i];
-                        minIndex = i;
-                    }
-                }
-                return minIndex;
-            }
-
-            for (let count = 0; count < vertices - 1; count++) {
-                const u = minimum();
-                if (u === -1) break;
-                vis[u] = true;
-
-                for (let v = 0; v < vertices; v++) {
-                    if (!vis[v] && costMatrix[u][v] && dist[u] !== Infinity && dist[u] + costMatrix[u][v] < dist[v]) {
-                        dist[v] = dist[u] + costMatrix[u][v];
-                        path[v] = u;
-                    }
-                }
-            }
-
-            const outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = '<h3>Results:</h3>';
-
-            for (let i = 0; i < vertices; i++) {
-                outputDiv.innerHTML += `Vertex: ${i}, Distance: ${dist[i]}, Path: ${getPath(i)}<br>`;
-            }
-
-            function getPath(v) {
-                const result = [];
-                while (v !== -1) {
-                    result.unshift(v);
-                    v = path[v];
-                }
-                return result.join(' -> ');
-            }
-        }
-    </script>
+    <p class="note">(You can further reflect on your experiences in designing and implementing this sub-task.)</p>
 </body>
 </html>
