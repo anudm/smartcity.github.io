@@ -1,1 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case: Water Management System in Flood Scenarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        .figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .figure img {
+            max-width: 100%;
+            height: auto;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Business Case: Water Management System in Flood Scenarios</h1>
+    <p><strong>Sub-task:</strong> Disaster Resilience and Water Management</p>
+    <p><strong>SDG Goal:</strong> 11</p>
+    <p><strong>Target:</strong> 11.B</p>
+    <p><strong>Indicator:</strong> 11.B.1</p>
+
+    <p>Effective water management is essential to increase disaster resilience, especially in flood-prone areas. The implementation of water management systems supports SDG Goal 11 by mitigating flood risks and improving the resilience of urban infrastructure. Below are the specific targets and indicators:</p>
+    <ul>
+        <li><strong>Target 11.B:</strong> Increase the number of cities adopting disaster resilience strategies for water management.</li>
+        <li><strong>Indicator 11.B.1:</strong> Proportion of cities with comprehensive flood management and water risk reduction plans.</li>
+    </ul>
+
+    <p>The following water management facilities are monitored to ensure effective flood control and water risk reduction:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sl. No.</th>
+                <th>Facility Type</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Flood Control Dams</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Stormwater Drainage Systems</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Flood Risk Monitoring Centers</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Water Reservoirs</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Rainwater Harvesting Units</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The data is derived from flood management designs and estimates for the maintenance and logistics of water management systems. Below is a representation of the monitored flood-prone regions:</p>
+
+    <div class="figure">
+        <img src="https://via.placeholder.com/600x400?text=Water+Management+System+Map" alt="Water Management System Map">
+        <p><strong>Fig 1:</strong> Water Management System in Flood Zones</p>
+    </div>
+
+    <p>To optimize flood risk management, advanced algorithms such as Dijkstra's algorithm can be used to determine the shortest paths for emergency response teams. You can access the implementation code 
+        <a href="water_management_code.txt" target="_blank">HERE</a>. The algorithm runs in <em>|E|log|V|</em> time complexity, applying real-time optimization for faster decision-making during flood events.</p>
+
+    <p>Additionally, predictive models using data analytics can forecast flood risks. These models can be implemented using algorithms such as Decision Trees, Random Forests, or Support Vector Machines (SVM). You can view the implementation of one such predictive model 
+        <a href="predictive_model_code.txt" target="_blank">HERE</a>.
+    </p>
+
+    <p class="note">This case study emphasizes the need for integrated flood management systems to build disaster resilience and ensure water security, contributing to SDG Goal 11.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Management System Applications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .application {
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #2c3e50;
+        }
+        p {
+            font-size: 16px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Water Management System Applications</h1>
+
+    <div class="application">
+        <h3>1. Arrays</h3>
+        <p>Used to store historical water levels for reservoirs and rivers for quick access and computation.</p>
+    </div>
+
+    <div class="application">
+        <h3>2. Structures</h3>
+        <p>Define water resources with properties like capacity, flow rate, and quality.</p>
+        <pre>
+struct WaterResource {
+    int id;
+    float capacity;
+    float currentLevel;
+    float quality;
+};
+        </pre>
+    </div>
+
+    <div class="application">
+        <h3>3. List</h3>
+        <p>Represent connected components of a water distribution network.</p>
+    </div>
+
+    <div class="application">
+        <h3>4. Stack</h3>
+        <p>Used in depth-first search (DFS) to detect cycles in the water pipeline network.</p>
+    </div>
+
+    <div class="application">
+        <h3>5. Queue</h3>
+        <p>Real-time water level monitoring uses queues for incoming sensor data.</p>
+    </div>
+
+    <div class="application">
+        <h3>6. Binary Tree</h3>
+        <p>Store hierarchical relationships of water resources, like river systems.</p>
+    </div>
+
+    <div class="application">
+        <h3>7. Binary Search Tree</h3>
+        <p>Efficient lookup of water resources by ID.</p>
+    </div>
+
+    <div class="application">
+        <h3>8. AVL Tree</h3>
+        <p>Self-balancing BST ensures optimal lookup times for water resource data.</p>
+    </div>
+
+    <div class="application">
+        <h3>9. 2-3 Tree</h3>
+        <p>Used to maintain dynamic datasets of rainfall statistics in multiple cities.</p>
+    </div>
+
+    <div class="application">
+        <h3>10. Red-Black Tree</h3>
+        <p>Store reservoir metadata for fast and balanced access.</p>
+    </div>
+
+    <div class="application">
+        <h3>11. Trie</h3>
+        <p>Manage hierarchical names of water resource locations.</p>
+    </div>
+
+    <div class="application">
+        <h3>12. Heap</h3>
+        <p>Manage priority queues for flood alerts and evacuation planning.</p>
+    </div>
+
+    <div class="application">
+        <h3>13. Lookup Table</h3>
+        <p>Direct access to water quality data based on region.</p>
+    </div>
+
+    <div class="application">
+        <h3>14. Sparse Table</h3>
+        <p>Answer range queries (e.g., max rainfall in a region over years) efficiently.</p>
+    </div>
+
+    <div class="application">
+        <h3>15. Fenwick Tree</h3>
+        <p>Perform range updates and queries on cumulative rainfall data.</p>
+    </div>
+
+    <div class="application">
+        <h3>16. Segment Tree</h3>
+        <p>Efficiently query and update data like reservoir levels in a region.</p>
+    </div>
+
+    <div class="application">
+        <h3>17. Skip List</h3>
+        <p>An alternative for dynamic water distribution networks.</p>
+    </div>
+
+    <div class="application">
+        <h3>18. Union-Find</h3>
+        <p>Identify connected components of water pipelines.</p>
+    </div>
+
+    <div class="application">
+        <h3>19. Hashing</h3>
+        <p>Quickly retrieve water quality reports based on region IDs.</p>
+    </div>
+
+    <div class="application">
+        <h3>20. Depth First Search (DFS)</h3>
+        <p>Detect pipeline cycles and find disconnected regions.</p>
+    </div>
+
+    <div class="application">
+        <h3>21. Breadth First Search (BFS)</h3>
+        <p>Find the shortest path for water delivery in a city.</p>
+    </div>
+
+    <div class="application">
+        <h3>22. Bubble Sort</h3>
+        <p>Sort pipeline maintenance schedules by urgency.</p>
+    </div>
+
+    <div class="application">
+        <h3>23. Selection Sort</h3>
+        <p>Sort reservoirs by descending capacity for flood planning.</p>
+    </div>
+
+    <div class="application">
+        <h3>24. Insertion Sort</h3>
+        <p>Insert newly reported flood regions into the sorted list.</p>
+    </div>
+
+    <div class="application">
+        <h3>25. Quick Sort</h3>
+        <p>Sort water quality indices for efficient reporting.</p>
+    </div>
+
+    <div class="application">
+        <h3>26. Merge Sort</h3>
+        <p>Used to rank projects in flood recovery plans.</p>
+    </div>
+
+    <div class="application">
+        <h3>27. Brute Force String Search</h3>
+        <p>Search for specific location names in text reports.</p>
+    </div>
+
+    <div class="application">
+        <h3>28. Rabin-Karp</h3>
+        <p>Match region names in large datasets for consistency checks.</p>
+    </div>
+
+    <div class="application">
+        <h3>29. Boyer-Moore</h3>
+        <p>Optimized string matching for large water management reports.</p>
+    </div>
+
+    <div class="application">
+        <h3>30. Knuth-Morris-Pratt</h3>
+        <p>Search patterns in rainfall data logs.</p>
+    </div>
+
+    <div class="application">
+        <h3>31. Heap Sort</h3>
+        <p>Sort flood zones by priority for evacuation.</p>
+    </div>
+
+    <div class="application">
+        <h3>32. Kruskal</h3>
+        <p>Build minimum-cost water pipeline connections.</p>
+    </div>
+
+    <div class="application">
+        <h3>33. Prim</h3>
+        <p>Design an optimal water distribution network.</p>
+    </div>
+
+    <div class="application">
+        <h3>34. Dijkstra</h3>
+        <p>Calculate the shortest path for water delivery routes.</p>
+    </div>
+
+    <div class="application">
+        <h3>35. Floyd-Warshall</h3>
+        <p>Find all-pairs shortest paths for water distribution.</p>
+    </div>
+
+    <div class="application">
+        <h3>36. Bellman-Ford</h3>
+        <p>Handle networks with negative weights (e.g., cost savings).</p>
+    </div>
+
+</body>
+</html>
+
+</body>
+</html>
 
