@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SDG Contributions</title>
     <style>
         body {
@@ -8,8 +10,8 @@
             margin: 20px;
             background-color: #f9f9f9;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center align the content */
             gap: 20px;
         }
         .section {
@@ -18,8 +20,7 @@
             background-color: #e9f7ff;
             padding: 15px;
             box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-            flex: 1 1 calc(33% - 40px); /* Adjust the width dynamically */
-            min-width: 300px;
+            width: 80%; /* Set a width to maintain a decent layout */
         }
         .section h2 {
             color: #007bff;
@@ -47,16 +48,14 @@
     </style>
 </head>
 <body>
-    <h1 style="width: 100%; text-align: center;">SDG Contributions</h1>
+    <h1 style="text-align: center;">SDG Contributions</h1>
 
     <div class="section">
         <h2>1. Healthcare</h2>
         <p>Healthcare supports <strong>SDG 11: Sustainable Cities and Communities</strong> by enhancing urban resilience and reducing the impact of disasters on human health.</p>
-        
         <h3>Target 11.5</h3>
         <p>By 2030, significantly reduce the number of deaths and the number of people affected, and substantially decrease the direct economic losses relative to global gross domestic product caused by disasters, including water-related disasters, with a focus on protecting the poor and people in vulnerable situations.</p>
         <p class="extra">Strengthening healthcare systems is crucial for disaster preparedness and response, minimizing casualties and health impacts during emergencies.</p>
-        
         <h3>Indicator 11.5.1</h3>
         <p>Number of deaths, missing persons, and directly affected persons attributed to disasters per 100,000 population.</p>
         <p class="extra">This indicator measures the human impact of disasters, highlighting the importance of resilient healthcare infrastructure in mitigating such effects.</p>
@@ -65,11 +64,9 @@
     <div class="section">
         <h2>2. Transportation</h2>
         <p>Transportation supports <strong>SDG 11: Sustainable Cities and Communities</strong> by fostering accessible, safe, and efficient transport systems that reduce urban congestion and improve connectivity.</p>
-        
         <h3>Target 11.2</h3>
         <p>Provide access to safe, affordable, accessible, and sustainable transport systems for all, with special attention to the needs of vulnerable groups.</p>
         <p class="extra">Inclusive transport systems enhance mobility for people with disabilities, the elderly, and those in underserved areas.</p>
-        
         <h3>Indicator 11.2.1</h3>
         <p>Proportion of population with convenient access to public transport.</p>
         <p class="extra">This ensures that urban and rural communities benefit from reliable, affordable, and efficient public transit networks.</p>
@@ -78,11 +75,9 @@
     <div class="section">
         <h2>3. Education</h2>
         <p>Education supports <strong>SDG 11: Sustainable Cities and Communities</strong> by promoting inclusive urbanization and enhancing the capacity for participatory, integrated, and sustainable human settlement planning and management.</p>
-        
         <h3>Target 11.1</h3>
         <p>By 2030, ensure access for all to adequate, safe, and affordable housing and basic services, and upgrade slums.</p>
         <p class="extra">Educational initiatives can raise awareness about sustainable living practices and empower communities to advocate for improved housing conditions.</p>
-        
         <h3>Indicator 11.a.1</h3>
         <p>Number of countries that have national urban policies or regional development plans that (a) respond to population dynamics; (b) ensure balanced territorial development; and (c) increase local fiscal space.</p>
         <p class="extra">Education plays a pivotal role in developing the expertise required for effective urban planning and policy formulation, ensuring sustainable city development.</p>
