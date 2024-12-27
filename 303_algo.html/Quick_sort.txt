@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+int partition(int arr[], int l, int r) {
+    int p = arr[l];
+    int i = l;
+    int j = r + 1;
+
+    do {
+        do {
+            i++;
+        } while (arr[i] < p && i <= r);
+
+        do {
+            j--;
+        } while (arr[j] > p && j >= l);
+
+        if (i < j) {
+            swap(arr[i], arr[j]);
+        }
+    } while (i < j);
+
+    swap(arr[l], arr[j]);
+    return j;  }
+
+void quickSort(int arr[], int l, int r) {
+    if (l < r) {
+        int s = partition(arr, l, r);
+
+        quickSort(arr, l, s - 1);
+        quickSort(arr, s + 1, r);
+    }
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "Original array: ";
+    printArray(arr, size);
+
+    quickSort(arr, 0, size - 1);
+
+    cout << "Sorted array: ";
+    printArray(arr, size);
+
+    return 0;
+}
