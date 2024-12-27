@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizing Waste Bin Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Waste Bin Collection Optimization</h2>
+    <p>Click the button below to optimize waste bin collection by prioritizing bins with the highest fill percentage.</p>
+
+    <table id="binTable">
+        <thead>
+            <tr>
+                <th>Bin ID</th>
+                <th>Fill Percentage (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bin 1</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>Bin 2</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>Bin 3</td>
+                <td>65</td>
+            </tr>
+            <tr>
+                <td>Bin 4</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Bin 5</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="optimizeCollection()">Optimize Collection</button>
+
+    <script>
+        function optimizeCollection() {
+            // Get all rows in the table
+            var table = document.getElementById("binTable");
+            var rows = Array.from(table.rows).slice(1);  // Exclude the header row
+
+            // Sort the rows based on the fill percentage (in descending order)
+            rows.sort(function(a, b) {
+                var fillA = parseInt(a.cells[1].innerText);
+                var fillB = parseInt(b.cells[1].innerText);
+                return fillB - fillA; // Sort in descending order
+            });
+
+            // Clear the table body
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+
+            // Append the sorted rows to the table body
+            rows.forEach(function(row) {
+                tbody.appendChild(row);
+            });
+
+            alert("Waste Bin Collection Optimized: Bins with the highest fill percentage are now prioritized.");
+        }
+    </script>
+
+</body>
+</html>
 
