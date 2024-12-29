@@ -3,441 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Case: Sustainable Urbanization Case Study</title>
+    <title>Suratpur Smart City - Sustainable Urbanization Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: "Roboto", sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+        /* Reset and global styles */
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1, h2, h3 {
-            color: #0056b3;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        .figure {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .figure img {
-            max-width: 100%;
-            height: auto;
-        }
-        a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .highlight {
-            background-color: #eaf7ff;
-            padding: 10px;
-            border-left: 4px solid #0056b3;
-            margin: 15px 0;
-        }
-        ul {
-            margin: 10px 0;
-            padding: 0 20px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Business Case: Sustainable Urbanization Case Study</h1>
-    <p><strong>Sub-task:</strong> Sustainable Urbanization Assessment</p>
-    <p><strong>SDG Goal:</strong> 11</p>
-    <p><strong>Target:</strong> 11.7</p>
-    <p><strong>Indicator:</strong> 11.7.1</p>
-
-    <p> Below is a summary of the locations evaluated along with their numbers:</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Sl. No.</th>
-                <th>Location Type</th>
-                <th>Number</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Public Parks</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Green Roofs</td>
-                <td>8</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Sustainable Buildings</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Waste Management Facilities</td>
-                <td>3</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p>The data above reflects the current distribution of green spaces and sustainability efforts in the city. Below is a visual representation of the locations:</p>
-
-    <div class="figure">
-        <img src="path-to-your-image/urbanization-map.png" alt="Sustainable Urbanization Map">
-        <p><strong>Fig 1:</strong> Sustainable Urbanization Map</p>
-    </div>
-
-    <h2>Objective</h2>
-    <p>To enhance accessibility, reduce travel costs, and prioritize green space projects for sustainable development.</p>
-
-    <h2>Steps and Applications</h2>
-
-    <h3>1. Optimizing Green Space Connectivity</h3>
-    <div class="highlight">
-        Using <strong>Kruskal’s Algorithm</strong>, planners developed a Minimum Spanning Tree that connects 10 green spaces with minimal road construction costs.
-    </div>
-    <p>Kruskal’s algorithm is a Greedy algorithm used for finding the minimum spanning tree of a graph. To view the code of Kruskal's <a href="kruskal.txt">click here</a>.</p>
-    <ul>
-        <li>Sorts the edges and adds them in sequence if no cycles are formed.</li>
-        <li>Time complexity: O(|E| log |E|), where E is the number of edges.</li>
-    </ul>
-
-    <h3>2. Analyzing Accessibility</h3>
-    <div class="highlight">
-        The <strong>Floyd-Warshall Algorithm</strong> identified the shortest paths between key locations.
-    </div>
-    <ul>
-        <li>Based on the principle of Kleene’s Theorem.</li>
-        <li>Time complexity: O(|V|^3), where V is the number of vertices.</li>
-    </ul>
-    <p>To view code <a href="floyds.txt">click here</a>.</p>
-
-    <h3>3. Prioritizing Development Projects</h3>
-    <div class="highlight">
-        Projects were ranked based on urgency and impact using <strong>Merge Sort</strong>.
-    </div>
-    <ul>
-        <li>Merge Sort has an efficiency of O(n log n).</li>
-    </ul>
-    <p>To view code <a href="merge.txt">click here</a>.</p>
-
-    <h2>Impact</h2>
-    <ul>
-        <li>Reduced costs of developing green spaces by 20%.</li>
-        <li>Improved accessibility to public facilities, reducing average travel times by 15%.</li>
-        <li>Timely execution of high-impact projects through data-driven prioritization.</li>
-    </ul>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Case: Sustainable Urbanization Case Study</title>
-    <style>
         body {
-            font-family: "Roboto", sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #0056b3;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        .figure {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .figure img {
-            max-width: 100%;
-            height: auto;
-        }
-        a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .highlight {
-            background-color: #eaf7ff;
-            padding: 10px;
-            border-left: 4px solid #0056b3;
-            margin: 15px 0;
-        }
-        ul {
-            margin: 10px 0;
-            padding: 0 20px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Business Case: Sustainable Urbanization Case Study</h1>
-    <p><strong>Sub-task:</strong> Sustainable Urbanization Assessment</p>
-    <p><strong>SDG Goal:</strong> 11</p>
-    <p><strong>Target:</strong> 11.7</p>
-    <p><strong>Indicator:</strong> 11.7.1</p>
-
-    <p> Below is a summary of the locations evaluated along with their numbers:</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Sl. No.</th>
-                <th>Location Type</th>
-                <th>Number</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Public Parks</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Green Roofs</td>
-                <td>8</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Sustainable Buildings</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Waste Management Facilities</td>
-                <td>3</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p>The data above reflects the current distribution of green spaces and sustainability efforts in the city. Below is a visual representation of the locations:</p>
-
-    <div class="figure">
-        <img src="path-to-your-image/urbanization-map.png" alt="Sustainable Urbanization Map">
-        <p><strong>Fig 1:</strong> Sustainable Urbanization Map</p>
-    </div>
-
-    <h2>Objective</h2>
-    <p>To enhance accessibility, reduce travel costs, and prioritize green space projects for sustainable development.</p>
-
-    <h2>Steps and Applications</h2>
-
-    <h3>1. Optimizing Green Space Connectivity</h3>
-    <div class="highlight">
-        Using <strong>Kruskal’s Algorithm</strong>, planners developed a Minimum Spanning Tree that connects 10 green spaces with minimal road construction costs.
-    </div>
-    <p>Kruskal’s algorithm is a Greedy algorithm used for finding the minimum spanning tree of a graph. To view the code of Kruskal's <a href="kruskal.txt">click here</a>.</p>
-    <ul>
-        <li>Sorts the edges and adds them in sequence if no cycles are formed.</li>
-        <li>Time complexity: O(|E| log |E|), where E is the number of edges.</li>
-    </ul>
-
-    <h3>2. Analyzing Accessibility</h3>
-    <div class="highlight">
-        The <strong>Floyd-Warshall Algorithm</strong> identified the shortest paths between key locations.
-    </div>
-    <ul>
-        <li>Based on the principle of Kleene’s Theorem.</li>
-        <li>Time complexity: O(|V|^3), where V is the number of vertices.</li>
-    </ul>
-    <p>To view code <a href="floyds.txt">click here</a>.</p>
-
-    <h3>3. Prioritizing Development Projects</h3>
-    <div class="highlight">
-        Projects were ranked based on urgency and impact using <strong>Merge Sort</strong>.
-    </div>
-    <ul>
-        <li>Merge Sort has an efficiency of O(n log n).</li>
-    </ul>
-    <p>To view code <a href="merge.txt">click here</a>.</p>
-
-    <h2>Impact</h2>
-    <ul>
-        <li>Reduced costs of developing green spaces by 20%.</li>
-        <li>Improved accessibility to public facilities, reducing average travel times by 15%.</li>
-        <li>Timely execution of high-impact projects through data-driven prioritization.</li>
-    </ul>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Case: Sustainable Urbanization Case Study</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fce4ec; /* Light Pink background */
+            color: black;
             line-height: 1.6;
-            margin: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.8rem;
+        }
+        header a {
+            text-decoration: none;
+            background-color: #ff5f6d;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            margin: 0.5rem;
+            display: inline-block;
+            font-weight: 600;
+        }
+        header a:hover {
+            background-color: #ff3385;
+        }
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h2 {
+            color: black;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #000;
+            margin: 1rem 0;
         }
         th, td {
-            padding: 8px;
+            border: 1px solid #ddd;
             text-align: center;
+            padding: 10px;
         }
-        .figure {
-            text-align: center;
-            margin: 20px 0;
+        th {
+            background-color: #ff5f6d;
+            color: white;
         }
-        .figure img {
-            max-width: 100%;
-            height: auto;
-        }
-        a {
-            color: blue;
+        .btn {
+            background-color: #ff5f6d;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
             text-decoration: none;
+            font-weight: bold;
         }
-        a:hover {
-            text-decoration: underline;
+        .btn:hover {
+            background-color: #ff3385;
         }
-        .note {
-            color: red;
-            font-style: italic;
+        ul {
+            list-style-type: disc;
+            margin: 1rem 0;
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
         }
     </style>
 </head>
 <body>
-    <h1>Business Case: Sustainable Urbanization Case Study</h1>
-    <p><strong>Sub-task:</strong> Sustainable Urbanization Assessment</p>
-    <p><strong>SDG Goal:</strong> 11</p>
-    <p><strong>Target:</strong> 11.7</p>
-    <p><strong>Indicator:</strong> 11.7.1</p>
-
-    <p> Below is a summary of the locations evaluated along with their numbers:</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Sl. No.</th>
-                <th>Location Type</th>
-                <th>Number</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Public Parks</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Green Roofs</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>3</td>
-                <td>Sustainable Buildings</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Waste Management Facilities</td>
-                <td>3</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p>The data above reflects the current distribution of green spaces and sustainability efforts in the city. Below is a visual representation of the locations:</p>
-
-    <div class="figure">
-        <img src="path-to-your-image/urbanization-map.png" alt="Sustainable Urbanization Map">
-        <p><strong>Fig 1:</strong> Sustainable Urbanization Map</p>
-    </div>
-
-    <h2>Objective</h2>
-    <p>To enhance accessibility, reduce travel costs, and prioritize green space projects for sustainable development.</p>
-
-    <h2>Steps and Applications</h2>
-
-    <h3>1. Optimizing Green Space Connectivity</h3>
-    <p class="highlight">Using <strong>Kruskal’s Algorithm</strong>, planners developed a Minimum Spanning Tree that connects 10 green spaces with minimal road construction costs.</p>
-    <h2>Kruskal’s Algorithm</h2>
-        <p>Kruskal’s algorithm is a Greedy algorithm used for finding the minimum spanning tree of a graph. It sorts all the edges in increasing order of their weights and adds them one by one to the spanning tree, provided they do not form a cycle. To view the code of kruskal's <a href="kruskal.txt">click here</a>
-</p>
-        <p>Key points:</p>
+    <header>
+        <h1>SURATPUR SMART CITY</h1>
+        <a href="#">Home</a>
+        <a href="project-introduction.html">Project Introduction</a>
+        <a href="team.html">Business Cases</a>
+    </header>
+    <main>
+        <h2>Sustainable Urbanization Case Study</h2>
+        <p><strong>Sub-task:</strong> Sustainable Urbanization Assessment</p>
+        <p><strong>SDG Goal:</strong> 11</p>
+        <p><strong>Target:</strong> 11.7</p>
+        <p><strong>Indicator:</strong> 11.7.1</p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sl. No.</th>
+                        <th>Location Type</th>
+                        <th>Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Public Parks</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Green Roofs</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Sustainable Buildings</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Waste Management Facilities</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>Objective</h2>
+        <p>To enhance accessibility, reduce travel costs, and prioritize green space projects for sustainable development.</p>
+        <h2>Steps and Applications</h2>
+        <h3>1. Optimizing Green Space Connectivity</h3>
+        <p>Using <strong>Kruskal’s Algorithm</strong>, planners developed a Minimum Spanning Tree that connects green spaces with minimal road construction costs. <a href="kruskal.txt" class="btn">View Code</a></p>
+        <h3>2. Analyzing Accessibility</h3>
+        <p>The <strong>Floyd-Warshall Algorithm</strong> identified the shortest paths between key locations. <a href="floyds.txt" class="btn">View Code</a></p>
+        <h3>3. Prioritizing Development Projects</h3>
+        <p>Projects were ranked using <strong>Merge Sort</strong> for timely execution. <a href="merge.txt" class="btn">View Code</a></p>
+        <h2>Impact</h2>
         <ul>
-            <li>Sorts the edges and adds them in sequence if no cycles are formed.</li>
-            <li>It is used for finding the Minimum Spanning Tree (MST) of a graph.</li>
-            <li>Falls under the Greedy technique.</li>
-            <li>With an efficient union-find algorithm, the time complexity is dominated by the sorting step, resulting in an overall time complexity of O(|E| log |E|), where E is the number of edges.</li>
+            <li>Reduced costs of developing green spaces by 20% using MST.</li>
+            <li>Improved accessibility, reducing travel times by 15%.</li>
+            <li>Timely execution of high-impact projects.</li>
         </ul>
-    <h3>2. Analyzing Accessibility</h3>
-    <p class="highlight">The <strong>Floyd-Warshall Algorithm</strong> identified the shortest paths between key locations, such as:</p>
-    <ul>
-        <li>Parks</li>
-        <li>Recycling centers</li>
-        <li>Public transport hubs</li>
-    </ul>
-    <p>Interventions were proposed for areas with high travel times.</p>
-   <ul>
-            <li>Based on the principle of Kleene’s Theorem.</li>
-            <li>Used for All-Pairs Shortest Path problems.</li>
-            <li>Falls under the dynamic programming technique (principle of optimality).</li>
-            <li>The algorithm has cubic time complexity, i.e., O(|V|^3), where V is the number of vertices in the graph.To view code  <a href="floyds.txt">click here</a></li>
-        </ul>
-    <h3>3. Prioritizing Development Projects</h3>
-    <p class="highlight">Projects were ranked based on urgency and impact using <strong>Merge Sort</strong>. Top projects include:</p>
-    <ul>
-        <li>Converting unused land into parks</li>
-        <li>Upgrading roads to reduce travel times</li>
-    </ul>
-    <h2>Merge Sort</h2>
-        <p>Merge Sort is a divide and conquer algorithm for sorting an array. It divides the array into two halves, recursively sorts them, and then merges the sorted halves to produce the sorted array.</p>
-        <p>Merge Sort has an efficiency of O(n log n), where n is the number of elements in the array being sorted. To view code  <a href="merge.txt">click here</a></p>
-   
-    <h2>Impact</h2>
-    <ul>
-        <li>Reduced costs of developing green spaces by 20% using the MST approach.</li>
-        <li>Improved accessibility to public facilities, reducing average travel times by 15%.</li>
-        <li>Timely execution of high-impact projects through data-driven prioritization.</li>
-    </ul>
-
-
+    </main>
+    <footer>
+        <p>© 2024 Suratpur - Smart City Portfolio</p>
+    </footer>
 </body>
 </html>
