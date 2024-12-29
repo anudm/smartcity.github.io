@@ -425,3 +425,71 @@ Sorting is used everywhere! For example:</br>
     </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8d7da; /* Light pink background */
+        }
+        .question {
+            text-align: center;
+        }
+        .green-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: #e91e63; /* Pink button color */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            animation: dance 2s infinite ease-in-out;
+        }
+
+        /* Button hover effect */
+        .green-button:hover {
+            background-color: #d81b60; /* Darker pink on hover */
+        }
+
+        /* Dancing animation keyframes */
+        @keyframes dance {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+            50% {
+                transform: translateY(0) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="question">
+        <a href="303_algo.html/IT_SECTOR.html" class="green-button">IT SECTOR</a>
+        <a href="303_algo.html/WASTE_MANAGEMENT.html" class="green-button">WASTE MANAGEMENT AND RECYCLING</a>
+        <a href="303_algo.html/INDUSTRY.html" class="green-button">INDUSTRY</a>
+    </div>
+
+</body>
+</html>
