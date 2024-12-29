@@ -1,160 +1,142 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kruskal's Algorithm - Network Infrastructure</title>
+    <title>Business Case: IT Industry Case Study</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-        }
-        #graph, #mst {
-            margin-top: 20px;
+            line-height: 1.6;
+            margin: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #000;
         }
         th, td {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
+            padding: 8px;
             text-align: center;
         }
-        th {
-            background-color: #f2f2f2;
+        .figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .figure img {
+            max-width: 100%;
+            height: auto;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            color: red;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
+    <h1>Business Case: IT Industry Case Study</h1>
+    <p><strong>Sub-task:</strong> Information Technology</p>
+    <p><strong>SDG Goal:</strong> 9</p>
+    <p><strong>Target:</strong> 9.4, 9.A</p>
+    <p><strong>Indicators:</strong> 9.4.1, 9.A.1</p>
 
-    <h1>Kruskal's Algorithm - Minimum Spanning Tree for Network Infrastructure</h1>
-    <p>This example demonstrates Kruskal's algorithm to connect data centers, tech hubs, and devices with the least cost.</p>
+    <p>The IT industry plays a vital role in enhancing industrial innovation and building resilient infrastructures. Below are the specific targets and indicators:</p>
+    <ul>
+        <li><strong>Target 9.4:</strong> Upgrade infrastructure and technology to make industries more sustainable.</li>
+        <li><strong>Indicator 9.4.1:</strong> Percentage of industries adopting clean technologies.</li>
+        <li><strong>Target 9.A:</strong> Increase access to information and communications technology (ICT).</li>
+        <li><strong>Indicator 9.A.1:</strong> Access to the internet in developing countries.</li>
+    </ul>
 
-    <div id="graph">
-        <h3>Graph: List of Edges with Costs</h3>
-        <table id="edges">
-            <thead>
-                <tr>
-                    <th>Node 1</th>
-                    <th>Node 2</th>
-                    <th>Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>A</td><td>B</td><td>4</td></tr>
-                <tr><td>A</td><td>C</td><td>3</td></tr>
-                <tr><td>B</td><td>C</td><td>1</td></tr>
-                <tr><td>B</td><td>D</td><td>2</td></tr>
-                <tr><td<C</td><td>D</td><td>5</td></tr>
-            </tbody>
-        </table>
+    <p>The offices and projects related to the IT industry, along with their numbers, are listed below:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sl. No.</th>
+                <th>Office/Project Type</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Data Centers</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Software Development Firms</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Tech Startups</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Cloud Service Providers</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Cybersecurity Agencies</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The above data is based on the industry design, and the cost of communication between these locations is estimated. Below is a representation of the network routes:</p>
+
+    <div class="figure">
+        <img src="https://via.placeholder.com/600x400?text=Network+Map+Placeholder" alt="IT Industry Network Map">
+        <p><strong>Fig 1:</strong> IT Industry Network Map</p>
     </div>
 
-    <div id="mst">
-        <h3>Minimum Spanning Tree</h3>
-        <table id="mst-edges">
-            <thead>
-                <tr>
-                    <th>Node 1</th>
-                    <th>Node 2</th>
-                    <th>Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- MST edges will be displayed here -->
-            </tbody>
-        </table>
-    </div>
+    <p>An optimal route is prepared for IT professionals using Dijkstra's algorithm. The code can be viewed 
+        <a href="djcode.txt" target="_blank">HERE</a>. The algorithm is implemented using a Heap data structure, and the efficiency is 
+        <em>|E|log|V|</em>, utilizing a greedy technique. This case study demonstrates the use of Dijkstra's algorithm in optimizing IT industry logistics.
+    </p>
 
-    <button onclick="applyKruskal()">Run Kruskal's Algorithm</button>
+    <p>Another approach is to use the BFS algorithm for searching through IT offices and projects. In the worst case, the algorithm would make all the m comparisons before shifting the pattern, with a worst-case efficiency of O(nm). The code for this approach can be viewed 
+        <a href="bfsscode.txt" target="_blank">HERE</a>. Additionally, we can utilize the KMP and Boyer-Moore algorithms for pattern matching.
+    </p>
 
-    <script>
-        // Data for the graph: each edge has two nodes and a cost
-        const edges = [
-            { node1: 'A', node2: 'B', cost: 4 },
-            { node1: 'A', node2: 'C', cost: 3 },
-            { node1: 'B', node2: 'C', cost: 1 },
-            { node1: 'B', node2: 'D', cost: 2 },
-            { node1: 'C', node2: 'D', cost: 5 }
-        ];
+    <h2>Key Focus Areas:</h2>
+    <ul>
+        <li><strong>Technological Upgradation (Target 9.4):</strong>
+            <ul>
+                <li>Improves infrastructure sustainability in industries.</li>
+                <li>Adopts clean technologies to optimize energy usage and reduce emissions.</li>
+            </ul>
+        </li>
+        <li><strong>ICT Accessibility (Target 9.A):</strong>
+            <ul>
+                <li>Improves internet connectivity in remote and underserved areas.</li>
+                <li>Supports digital inclusion through access to ICT services (<strong>Indicator 9.A.1</strong>).</li>
+            </ul>
+        </li>
+    </ul>
 
-        // Union-Find (Disjoint Set Union) class
-        class DisjointSet {
-            constructor(n) {
-                this.parent = [];
-                this.rank = [];
-                for (let i = 0; i < n; i++) {
-                    this.parent[i] = i;
-                    this.rank[i] = 0;
-                }
-            }
+    <h2>Case Highlights:</h2>
+    <ul>
+        <li>Collaboration with Data Centers, Software Development Firms, and Tech Startups to enhance tech infrastructure.</li>
+        <li>Adoption of Dijkstra's Algorithm for optimizing connectivity between IT offices and facilities.</li>
+        <li>Focus on reducing carbon footprint and energy consumption through the integration of clean technologies.</li>
+    </ul>
 
-            find(u) {
-                if (this.parent[u] !== u) {
-                    this.parent[u] = this.find(this.parent[u]);
-                }
-                return this.parent[u];
-            }
-
-            union(u, v) {
-                const rootU = this.find(u);
-                const rootV = this.find(v);
-                
-                if (rootU !== rootV) {
-                    // Union by rank
-                    if (this.rank[rootU] > this.rank[rootV]) {
-                        this.parent[rootV] = rootU;
-                    } else if (this.rank[rootU] < this.rank[rootV]) {
-                        this.parent[rootU] = rootV;
-                    } else {
-                        this.parent[rootV] = rootU;
-                        this.rank[rootU]++;
-                    }
-                    return true;
-                }
-                return false;
-            }
-        }
-
-        // Function to apply Kruskal's algorithm
-        function applyKruskal() {
-            const nodes = ['A', 'B', 'C', 'D'];
-            const ds = new DisjointSet(nodes.length);
-
-            // Sort edges by cost
-            edges.sort((a, b) => a.cost - b.cost);
-
-            const mstEdges = [];
-
-            // Process each edge
-            for (const edge of edges) {
-                const u = nodes.indexOf(edge.node1);
-                const v = nodes.indexOf(edge.node2);
-
-                // If adding this edge doesn't form a cycle, add it to the MST
-                if (ds.union(u, v)) {
-                    mstEdges.push(edge);
-                }
-            }
-
-            // Display the MST
-            displayMST(mstEdges);
-        }
-
-        // Function to display the MST in the table
-        function displayMST(mstEdges) {
-            const mstTable = document.getElementById('mst-edges').getElementsByTagName('tbody')[0];
-            mstTable.innerHTML = '';  // Clear the table
-
-            mstEdges.forEach(edge => {
-                const row = mstTable.insertRow();
-                row.insertCell(0).textContent = edge.node1;
-                row.insertCell(1).textContent = edge.node2;
-                row.insertCell(2).textContent = edge.cost;
-            });
-        }
-    </script>
-
+    <p class="note">This case study illustrates how the IT industry contributes to building resilient, sustainable infrastructures and improving access to technology in urban and rural regions.</p>
 </body>
 </html>
+
