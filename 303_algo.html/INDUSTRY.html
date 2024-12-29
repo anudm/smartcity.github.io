@@ -1,189 +1,139 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supply Chain Optimization - Minimum Spanning Tree</title>
+    <title>City Plan - Industrial Sector</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            padding: 20px;
+            line-height: 1.6;
+            margin: 20px;
         }
-        h1 {
-            text-align: center;
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        p, ul, li {
+            font-size: 1.1em;
+        }
+        .section {
+            margin-bottom: 40px;
         }
         table {
-            width: 60%;
-            margin: 30px auto;
+            width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #000;
         }
         th, td {
             padding: 8px;
             text-align: center;
-            border: 1px solid #ddd;
         }
-        th {
-            background-color: #4CAF50;
-            color: white;
+        .note {
+            color: red;
+            font-style: italic;
         }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            display: block;
-            margin: 30px auto;
-        }
-        button:hover {
-            background-color: #45a049;
+        .sdg {
+            font-weight: bold;
+            color: #27ae60;
         }
     </style>
 </head>
 <body>
+    <h1>City Plan - Industrial Sector</h1>
 
-    <h1>Supply Chain Optimization with Minimum Spanning Tree (MST)</h1>
-    <p>Click the button below to optimize the supply chain network using Kruskal's algorithm, minimizing the connection cost between supply chain nodes.</p>
+    <div class="section">
+        <h2>Case Study: Industrial Sector Infrastructure Optimization</h2>
+        <p><strong>Objective:</strong> Improve the efficiency and sustainability of industrial zones, focusing on waste management, resource utilization, and infrastructure optimization.</p>
 
-    <table id="costTable">
-        <thead>
-            <tr>
-                <th>Connection (Nodes)</th>
-                <th>Cost</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Factory 1 - DC 1</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>Factory 1 - DC 2</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>DC 1 - Retail 1</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>DC 1 - Retail 2</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>Factory 2 - DC 2</td>
-                <td>25</td>
-            </tr>
-            <tr>
-                <td>Factory 2 - Retail 1</td>
-                <td>35</td>
-            </tr>
-            <tr>
-                <td>DC 2 - Retail 2</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>Factory 1 - Retail 2</td>
-                <td>50</td>
-            </tr>
-        </tbody>
-    </table>
+        <h3>Challenges and Consequences:</h3>
+        <ul>
+            <li><strong>Inefficient waste disposal systems:</strong> Industrial zones generate large amounts of waste, including hazardous materials, with improper disposal leading to environmental pollution and health hazards.</li>
+            <li><strong>Traffic congestion:</strong> Heavy trucks and industrial vehicles cause traffic jams in industrial zones, leading to delays and increased fuel consumption.</li>
+            <li><strong>Resource wastage:</strong> Excessive energy and water usage in industrial activities, contributing to resource depletion and increased operational costs.</li>
+            <li><strong>Lack of real-time monitoring:</strong> Insufficient data collection and real-time monitoring of industrial processes lead to inefficiencies and higher operational costs.</li>
+        </ul>
 
-    <button onclick="optimizeSupplyChain()">Optimize Supply Chain</button>
+        <h3>Solution Approach:</h3>
+        <p>The following methods are applied to address the industrial sector challenges:</p>
 
-    <script>
-        // Sample connection data for supply chain nodes
-        const connections = [
-            { nodes: 'Factory 1 - DC 1', cost: 10 },
-            { nodes: 'Factory 1 - DC 2', cost: 15 },
-            { nodes: 'DC 1 - Retail 1', cost: 30 },
-            { nodes: 'DC 1 - Retail 2', cost: 20 },
-            { nodes: 'Factory 2 - DC 2', cost: 25 },
-            { nodes: 'Factory 2 - Retail 1', cost: 35 },
-            { nodes: 'DC 2 - Retail 2', cost: 40 },
-            { nodes: 'Factory 1 - Retail 2', cost: 50 },
-        ];
+        <ul>
+            <li><strong>Algorithms:</strong>
+                <ul>
+                    <li><strong>Vehicle Routing Problem (VRP):</strong> Using Dijkstra's algorithm to optimize truck routes within the industrial zones, reducing traffic congestion and fuel consumption.</li>
+                    <li><strong>Cluster Analysis:</strong> Using K-Means clustering to group industries based on resource consumption and waste output, optimizing resource allocation and waste management.</li>
+                    <li><strong>Linear Programming:</strong> To minimize resource wastage (water, energy) by optimizing production schedules and resource distribution.</li>
+                </ul>
+            </li>
+            <li><strong>Data Structures:</strong>
+                <ul>
+                    <li><strong>Graphs:</strong> For mapping transportation networks and modeling the interconnection between industries and waste disposal facilities.</li>
+                    <li><strong>Priority Queues (Heaps):</strong> Used for scheduling maintenance activities and waste pickups based on urgency and capacity.</li>
+                    <li><strong>Hash Tables:</strong> To track real-time data for waste types, recycling rates, and energy consumption at different industrial sites.</li>
+                </ul>
+            </li>
+            <li><strong>Sorting Techniques:</strong>
+                <ul>
+                    <li><strong>Quick Sort:</strong> Used to sort transportation routes or industries by their waste output or energy consumption for prioritization.</li>
+                    <li><strong>Merge Sort:</strong> Helps in sorting waste items into categories like recyclable and non-recyclable based on predefined criteria.</li>
+                </ul>
+            </li>
+        </ul>
 
-        // Function to sort connections by cost
-        function kruskal() {
-            // Sort the connections based on the cost
-            connections.sort((a, b) => a.cost - b.cost);
+        <h3>SDG 11 Targets in the Context of Industrial Sector:</h3>
+        <p>The following SDG targets are crucial for developing a sustainable industrial sector in city planning:</p>
+        <ul>
+            <li><span class="sdg">11.1:</span> Ensure access for all to adequate, safe, and affordable housing and basic services, and upgrade slums. <strong>Relevance:</strong> Providing industrial workers with safe and affordable housing near work areas to reduce congestion and improve quality of life.</li>
+            <li><span class="sdg">11.3:</span> Enhance inclusive and sustainable urbanization and capacity for participatory, integrated, and sustainable human settlement planning and management in all countries. <strong>Relevance:</strong> Implementing data-driven solutions to optimize land use and minimize the environmental impact of industrial zones.</li>
+            <li><span class="sdg">11.c:</span> Support least developed countries, including through financial and technical assistance, in building sustainable and resilient buildings utilizing local materials. <strong>Relevance:</strong> Supporting industrial zones in developing countries with sustainable technologies, waste management practices, and energy-efficient systems to promote resilience.</li>
+        </ul>
+    </div>
 
-            const mst = [];
-            const parent = {};
-            const rank = {};
+    <div class="section">
+        <h2>Industrial Waste Management System: Example Data</h2>
+        <p>The table below illustrates some of the industrial waste management data for various industries:</p>
 
-            // Initialize the parent and rank for each node
-            const nodes = ['Factory 1', 'Factory 2', 'DC 1', 'DC 2', 'Retail 1', 'Retail 2'];
-            nodes.forEach(node => {
-                parent[node] = node;
-                rank[node] = 0;
-            });
-
-            // Find function (to find the representative of a set)
-            function find(node) {
-                if (parent[node] !== node) {
-                    parent[node] = find(parent[node]);
-                }
-                return parent[node];
-            }
-
-            // Union function (to combine two sets)
-            function union(node1, node2) {
-                const root1 = find(node1);
-                const root2 = find(node2);
-
-                if (root1 !== root2) {
-                    // Union by rank
-                    if (rank[root1] > rank[root2]) {
-                        parent[root2] = root1;
-                    } else if (rank[root1] < rank[root2]) {
-                        parent[root1] = root2;
-                    } else {
-                        parent[root2] = root1;
-                        rank[root1]++;
-                    }
-                }
-            }
-
-            // Iterate through all the connections and build the MST
-            for (const connection of connections) {
-                const [node1, node2] = connection.nodes.split(' - ');
-                if (find(node1) !== find(node2)) {
-                    union(node1, node2);
-                    mst.push(connection);
-                }
-            }
-
-            return mst;
-        }
-
-        // Function to display the optimized supply chain
-        function optimizeSupplyChain() {
-            const mst = kruskal();
-
-            // Display the result in the table
-            const tableBody = document.getElementById('costTable').getElementsByTagName('tbody')[0];
-            tableBody.innerHTML = '';
-
-            let totalCost = 0;
-            mst.forEach(connection => {
-                const row = tableBody.insertRow();
-                const cell1 = row.insertCell(0);
-                const cell2 = row.insertCell(1);
-                cell1.textContent = connection.nodes;
-                cell2.textContent = connection.cost;
-                totalCost += connection.cost;
-            });
-
-            alert(`Optimization Complete. Total Supply Chain Cost: ${totalCost}`);
-        }
-    </script>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl. No.</th>
+                    <th>Industry</th>
+                    <th>Waste Type</th>
+                    <th>Recyclable (Yes/No)</th>
+                    <th>Last Collection Time</th>
+                    <th>Waste Volume (kg)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Textile Factory</td>
+                    <td>Cloth Scraps, Chemicals</td>
+                    <td>Yes (Cloth Scraps)</td>
+                    <td>2024-12-28 08:00</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Plastic Manufacturing</td>
+                    <td>Plastic Waste</td>
+                    <td>Yes</td>
+                    <td>2024-12-27 18:30</td>
+                    <td>1200</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Steel Plant</td>
+                    <td>Metal Scraps</td>
+                    <td>Yes</td>
+                    <td>2024-12-29 09:00</td>
+                    <td>2000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
-
