@@ -349,21 +349,7 @@ Sorting is used everywhere! For example:</br>
 
     </div>
 </body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODE IMPLEMENTATIONS</title>
-</head>
-<body>
-
-    <h1>CODE IMPLEMENTATIONS</h1>
-
-</body>
-</html>
-
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -380,7 +366,7 @@ Sorting is used everywhere! For example:</br>
         }
 
         /* Button Style - Background Color Changed to Pink */
-        .green-button {
+        .dancing-button {
             display: inline-block;
             padding: 10px 20px;
             background-color: #ff69b4;  /* Pink background */
@@ -391,11 +377,21 @@ Sorting is used everywhere! For example:</br>
             font-size: 16px;
             margin: 10px 0;
             transition: background-color 0.3s;
+            animation: dance 1s ease-in-out infinite; /* Dancing animation */
         }
 
         /* Button Hover Effect - Darker Pink */
-        .green-button:hover {
+        .dancing-button:hover {
             background-color: #ff1493;  /* Darker pink when hovering */
+        }
+
+        /* Dancing Animation */
+        @keyframes dance {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(10px); }
+            50% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
         }
 
         /* Question Style */
@@ -419,11 +415,9 @@ Sorting is used everywhere! For example:</br>
 </head>
 <body>
     <div class="question">
-<a href="303_algo.html/IT_SECTOR.html" class="dancing-button">IT SECTOR</a>
-<a href="303_algo.html/WASTE_MANAGEMENT.html" class="dancing-button">WASTE MANAGEMENT AND RECYCLING</a>
-<a href="303_algo.html/INDUSTRY.html" class="dancing-button">INDUSTRY</a>
-
-
+        <a href="303_algo.html/IT_SECTOR.html" class="dancing-button">IT SECTOR</a>
+        <a href="303_algo.html/WASTE_MANAGEMENT.html" class="dancing-button">WASTE MANAGEMENT AND RECYCLING</a>
+        <a href="303_algo.html/INDUSTRY.html" class="dancing-button">INDUSTRY</a>
     </div>
 </body>
 </html>
