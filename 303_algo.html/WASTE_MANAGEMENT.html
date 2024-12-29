@@ -3,104 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimizing Waste Bin Collection</title>
+    <title>Waste Management in City Planning</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 20px;
-            background-color: #f4f4f9;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        p, ul, li {
+            font-size: 1.1em;
+        }
+        .note {
+            color: red;
+            font-style: italic;
         }
         table {
-            width: 60%;
-            margin: 20px auto;
+            width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #000;
         }
         th, td {
             padding: 8px;
             text-align: center;
-            border: 1px solid #ddd;
         }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #45a049;
+        .section {
+            margin-bottom: 40px;
         }
     </style>
 </head>
 <body>
+    <h1>Waste Management in City Planning</h1>
 
-    <h2>Waste Bin Collection Optimization</h2>
-    <p>Click the button below to optimize waste bin collection by prioritizing bins with the highest fill percentage.</p>
+    <div class="section">
+        <h2>Case Study: Waste Collection and Sorting</h2>
+        <p><strong>Objective:</strong> Optimize waste collection routes, minimize fuel consumption, and improve sorting and recycling efficiency in the city.</p>
 
-    <table id="binTable">
-        <thead>
-            <tr>
-                <th>Bin ID</th>
-                <th>Fill Percentage (%)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Bin 1</td>
-                <td>45</td>
-            </tr>
-            <tr>
-                <td>Bin 2</td>
-                <td>85</td>
-            </tr>
-            <tr>
-                <td>Bin 3</td>
-                <td>65</td>
-            </tr>
-            <tr>
-                <td>Bin 4</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>Bin 5</td>
-                <td>90</td>
-            </tr>
-        </tbody>
-    </table>
+        <h3>Challenges and Consequences:</h3>
+        <ul>
+            <li>Inefficient collection routes causing excess fuel consumption.</li>
+            <li>Overflowing waste bins leading to hygiene and environmental issues.</li>
+            <li>Manual sorting errors and increased contamination in recycling.</li>
+        </ul>
 
-    <button onclick="optimizeCollection()">Optimize Collection</button>
+        <h3>Solution Approach:</h3>
+        <p>We utilize algorithms and data structures to solve the waste management challenges:</p>
 
-    <script>
-        function optimizeCollection() {
-            // Get all rows in the table
-            var table = document.getElementById("binTable");
-            var rows = Array.from(table.rows).slice(1);  // Exclude the header row
+        <ul>
+            <li><strong>Algorithms:</strong>
+                <ul>
+                    <li>Vehicle Routing Problem (VRP) using Dijkstra's algorithm for shortest path routing.</li>
+                    <li>Clustering algorithms for grouping collection points based on waste volume.</li>
+                    <li>Ant Colony Optimization (ACO) for dynamic route optimization.</li>
+                </ul>
+            </li>
+            <li><strong>Data Structures:</strong>
+                <ul>
+                    <li>Graphs for modeling road networks and collection points.</li>
+                    <li>Priority Queues (Heaps) for scheduling collections based on urgency.</li>
+                    <li>Hash Tables for fast categorization of waste types.</li>
+                </ul>
+            </li>
+            <li><strong>Sorting Techniques:</strong>
+                <ul>
+                    <li>Quick Sort and Merge Sort for sorting waste collection points based on proximity and waste levels.</li>
+                    <li>Bucket Sort for organizing waste bins by type (e.g., recyclable, organic, etc.).</li>
+                </ul>
+            </li>
+        </ul>
 
-            // Sort the rows based on the fill percentage (in descending order)
-            rows.sort(function(a, b) {
-                var fillA = parseInt(a.cells[1].innerText);
-                var fillB = parseInt(b.cells[1].innerText);
-                return fillB - fillA; // Sort in descending order
-            });
+        <h3>Data and Storage:</h3>
+        <p>We store waste data using databases and analyze trends with clustering algorithms. Real-time data collection via IoT sensors helps manage collection and sorting dynamically.</p>
+    </div>
 
-            // Clear the table body
-            var tbody = table.querySelector("tbody");
-            tbody.innerHTML = "";
+    <div class="section">
+        <h2>Waste Collection System: Example Data</h2>
+        <p>The table below represents some of the waste collection points and their details:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl. No.</th>
+                    <th>Collection Point</th>
+                    <th>Waste Type</th>
+                    <th>Last Collection Time</th>
+                    <th>Waste Volume (kg)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Park Avenue</td>
+                    <td>Plastic, Organic</td>
+                    <td>2024-12-28 08:00</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Main Street</td>
+                    <td>Paper, Glass</td>
+                    <td>2024-12-27 18:30</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Central Square</td>
+                    <td>Mixed</td>
+                    <td>2024-12-29 09:00</td>
+                    <td>200</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-            // Append the sorted rows to the table body
-            rows.forEach(function(row) {
-                tbody.appendChild(row);
-            });
+    <div class="section">
+        <h2>Sorting Algorithms for Waste Sorting</h2>
+        <p>For efficient sorting, we use the following algorithms:</p>
+        <ul>
+            <li><strong>Quick Sort:</strong> Used to quickly categorize waste based on types (e.g., plastic, organic, etc.).</li>
+            <li><strong>Merge Sort:</strong> Helps in sorting waste bins based on their fullness, ensuring priority is given to full bins.</li>
+            <li><strong>Bucket Sort:</strong> Efficient for categorizing recyclables into predefined types such as glass, plastic, and paper.</li>
+        </ul>
+        <p class="note">These algorithms are vital for improving sorting efficiency, reducing errors, and ensuring proper recycling of waste.</p>
+    </div>
 
-            alert("Waste Bin Collection Optimized: Bins with the highest fill percentage are now prioritized.");
-        }
-    </script>
-
+    <div class="section">
+        <h2>Real-Time Monitoring and Data Analysis</h2>
+        <p>Waste data is collected and analyzed to optimize collection schedules:</p>
+        <ul>
+            <li>IoT sensors in bins monitor fill levels in real time.</li>
+            <li>Data is processed using predictive algorithms like Linear Regression to forecast waste levels.</li>
+            <li>Clustering algorithms (e.g., K-Means) are used to group neighborhoods with similar waste generation patterns for optimized scheduling.</li>
+        </ul>
+    </div>
 </body>
 </html>
