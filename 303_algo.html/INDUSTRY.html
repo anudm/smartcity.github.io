@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Plan - Industrial Sector</title>
+    <title>City Plan - Industrial Sector with Greedy Algorithms</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,97 +42,102 @@
     </style>
 </head>
 <body>
-    <h1>City Plan - Industrial Sector</h1>
+    <h1>City Plan - Industrial Sector with Greedy Algorithms</h1>
 
     <div class="section">
-        <h2>Case Study: Industrial Sector Infrastructure Optimization</h2>
-        <p><strong>Objective:</strong> Improve the efficiency and sustainability of industrial zones, focusing on waste management, resource utilization, and infrastructure optimization.</p>
+        <h2>Case Study: Industrial Sector Optimization</h2>
+        <p><strong>Objective:</strong> Optimize industrial infrastructure using greedy algorithms for transportation, resource management, and network connectivity.</p>
 
         <h3>Challenges and Consequences:</h3>
         <ul>
-            <li><strong>Inefficient waste disposal systems:</strong> Industrial zones generate large amounts of waste, including hazardous materials, with improper disposal leading to environmental pollution and health hazards.</li>
-            <li><strong>Traffic congestion:</strong> Heavy trucks and industrial vehicles cause traffic jams in industrial zones, leading to delays and increased fuel consumption.</li>
-            <li><strong>Resource wastage:</strong> Excessive energy and water usage in industrial activities, contributing to resource depletion and increased operational costs.</li>
-            <li><strong>Lack of real-time monitoring:</strong> Insufficient data collection and real-time monitoring of industrial processes lead to inefficiencies and higher operational costs.</li>
+            <li><strong>Inefficient industrial zone connectivity:</strong> The cost and time to connect various industrial zones (e.g., roads, electricity, water pipelines) are not optimized.</li>
+            <li><strong>Resource wastage:</strong> Resources like energy and water are consumed inefficiently in industrial zones due to poor allocation and scheduling.</li>
+            <li><strong>Suboptimal routing:</strong> Industrial vehicles are not taking the most efficient routes, leading to increased fuel consumption and delays.</li>
         </ul>
 
-        <h3>Solution Approach:</h3>
-        <p>The following methods are applied to address the industrial sector challenges:</p>
+        <h3>Solution Approach Using Greedy Algorithms:</h3>
+        <p>Greedy algorithms are ideal for optimizing various industrial tasks:</p>
 
         <ul>
-            <li><strong>Algorithms:</strong>
+            <li><strong>Prim's Algorithm:</strong>
                 <ul>
-                    <li><strong>Vehicle Routing Problem (VRP):</strong> Using Dijkstra's algorithm to optimize truck routes within the industrial zones, reducing traffic congestion and fuel consumption.</li>
-                    <li><strong>Cluster Analysis:</strong> Using K-Means clustering to group industries based on resource consumption and waste output, optimizing resource allocation and waste management.</li>
-                    <li><strong>Linear Programming:</strong> To minimize resource wastage (water, energy) by optimizing production schedules and resource distribution.</li>
+                    <li>Used for **minimum spanning tree (MST)** to connect various industrial zones with the least cost or distance. By adding the nearest neighboring zone to the network, Prim's ensures minimum cost for infrastructure such as roads, pipelines, and electricity lines.</li>
                 </ul>
             </li>
-            <li><strong>Data Structures:</strong>
+            <li><strong>Kruskal's Algorithm:</strong>
                 <ul>
-                    <li><strong>Graphs:</strong> For mapping transportation networks and modeling the interconnection between industries and waste disposal facilities.</li>
-                    <li><strong>Priority Queues (Heaps):</strong> Used for scheduling maintenance activities and waste pickups based on urgency and capacity.</li>
-                    <li><strong>Hash Tables:</strong> To track real-time data for waste types, recycling rates, and energy consumption at different industrial sites.</li>
+                    <li>Also used for **minimum spanning tree (MST)**. Kruskal's algorithm works by sorting all the edges in increasing order of weight (cost), and adding edges that don’t form a cycle. This can be used to optimize the construction of roads, water pipes, and electrical grid networks.</li>
                 </ul>
             </li>
-            <li><strong>Sorting Techniques:</strong>
+            <li><strong>Boyer-Moore Algorithm:</strong>
                 <ul>
-                    <li><strong>Quick Sort:</strong> Used to sort transportation routes or industries by their waste output or energy consumption for prioritization.</li>
-                    <li><strong>Merge Sort:</strong> Helps in sorting waste items into categories like recyclable and non-recyclable based on predefined criteria.</li>
+                    <li>This string-matching algorithm is useful for analyzing logs or finding patterns in industrial data, such as detecting anomalies or specific conditions in production lines or monitoring systems.</li>
                 </ul>
             </li>
         </ul>
 
         <h3>SDG 11 Targets in the Context of Industrial Sector:</h3>
-        <p>The following SDG targets are crucial for developing a sustainable industrial sector in city planning:</p>
+        <p>The following SDG targets are applied to the industrial sector in this city plan:</p>
         <ul>
-            <li><span class="sdg">11.1:</span> Ensure access for all to adequate, safe, and affordable housing and basic services, and upgrade slums. <strong>Relevance:</strong> Providing industrial workers with safe and affordable housing near work areas to reduce congestion and improve quality of life.</li>
-            <li><span class="sdg">11.3:</span> Enhance inclusive and sustainable urbanization and capacity for participatory, integrated, and sustainable human settlement planning and management in all countries. <strong>Relevance:</strong> Implementing data-driven solutions to optimize land use and minimize the environmental impact of industrial zones.</li>
-            <li><span class="sdg">11.c:</span> Support least developed countries, including through financial and technical assistance, in building sustainable and resilient buildings utilizing local materials. <strong>Relevance:</strong> Supporting industrial zones in developing countries with sustainable technologies, waste management practices, and energy-efficient systems to promote resilience.</li>
+            <li><span class="sdg">11.1:</span> Ensure access for all to adequate, safe, and affordable housing and basic services, and upgrade slums. <strong>Relevance:</strong> Optimized infrastructure ensures safe and accessible housing near industrial zones, reducing commuting times and increasing productivity.</li>
+            <li><span class="sdg">11.3:</span> Enhance inclusive and sustainable urbanization and capacity for participatory, integrated, and sustainable human settlement planning and management in all countries. <strong>Relevance:</strong> Using Prim’s and Kruskal’s algorithms for efficient infrastructure development supports sustainable growth and optimized urbanization.</li>
+            <li><span class="sdg">11.c:</span> Support least developed countries, including through financial and technical assistance, in building sustainable and resilient buildings utilizing local materials. <strong>Relevance:</strong> Greedy algorithms help prioritize resource distribution to areas that need them most, ensuring efficiency and sustainability in urban development.</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>Industrial Waste Management System: Example Data</h2>
-        <p>The table below illustrates some of the industrial waste management data for various industries:</p>
+        <h2>Industrial Resource Allocation and Infrastructure Network</h2>
+        <p>The table below represents the industrial zones and their connectivity costs for infrastructure:</p>
 
         <table>
             <thead>
                 <tr>
                     <th>Sl. No.</th>
-                    <th>Industry</th>
-                    <th>Waste Type</th>
-                    <th>Recyclable (Yes/No)</th>
-                    <th>Last Collection Time</th>
-                    <th>Waste Volume (kg)</th>
+                    <th>Zone</th>
+                    <th>Infrastructure Type</th>
+                    <th>Cost (in $)</th>
+                    <th>Connected To</th>
+                    <th>Distance (km)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Textile Factory</td>
-                    <td>Cloth Scraps, Chemicals</td>
-                    <td>Yes (Cloth Scraps)</td>
-                    <td>2024-12-28 08:00</td>
+                    <td>Industrial Zone A</td>
+                    <td>Road</td>
                     <td>500</td>
+                    <td>Industrial Zone B</td>
+                    <td>5</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Plastic Manufacturing</td>
-                    <td>Plastic Waste</td>
-                    <td>Yes</td>
-                    <td>2024-12-27 18:30</td>
-                    <td>1200</td>
+                    <td>Industrial Zone B</td>
+                    <td>Water Pipe</td>
+                    <td>300</td>
+                    <td>Industrial Zone C</td>
+                    <td>3</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Steel Plant</td>
-                    <td>Metal Scraps</td>
-                    <td>Yes</td>
-                    <td>2024-12-29 09:00</td>
-                    <td>2000</td>
+                    <td>Industrial Zone C</td>
+                    <td>Electricity</td>
+                    <td>700</td>
+                    <td>Industrial Zone A</td>
+                    <td>4</td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div class="section">
+        <h2>Greedy Algorithms for Industrial Optimization</h2>
+        <p>Greedy algorithms are used in the following ways for industrial optimization:</p>
+        <ul>
+            <li><strong>Prim's Algorithm:</strong> Used to connect all industrial zones (A, B, C) with the least cost, ensuring minimum infrastructure cost (e.g., roads, pipes, electricity lines).</li>
+            <li><strong>Kruskal's Algorithm:</strong> Used to sort the edges (infrastructure connections) in increasing order of cost and then connect zones optimally.</li>
+            <li><strong>Boyer-Moore Algorithm:</strong> Applied to detect patterns in industrial data logs, helping with anomaly detection in production processes or maintenance schedules.</li>
+        </ul>
+        <p class="note">These greedy algorithms are fundamental for ensuring cost-effective and efficient urban planning and industrial resource management in the city.</p>
     </div>
 
 </body>
