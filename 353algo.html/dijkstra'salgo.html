@@ -1,171 +1,231 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Case: Agriculture Case Study</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agriculture Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {
+
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fce4ec; /* Light Pink background */
+            color: black;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 1100px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: black;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #ff5f6d;
+            color: black;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            margin: 0.5rem;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            background-color: #ff3385;
+            color: white;
+        }
+
+        /* Main Section */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: black;
+            margin-bottom: 2rem;
             text-align: center;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
+
         table, th, td {
             border: 1px solid #000;
         }
+
         th, td {
             padding: 8px;
             text-align: center;
+            font-size: 1rem;
         }
+
+        th {
+            background-color: #ff5f6d;
+            color: white;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
         ul {
             margin: 15px 0;
             padding-left: 20px;
         }
+
         li {
             margin: 5px 0;
         }
+
         a {
             color: blue;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
-        .note {
-            font-style: italic;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-    <h1>Agriculture Case Study</h1>
 
-    <p><strong>Sub-task:</strong> Agricultural </p>
-    <p><strong>SDG Goal:</strong> 11</p>
-    <p><strong>Target:</strong> 11.3, 11.A</p>
-    <p><strong>Indicators:</strong> 11.3.1, 11.A.1</p>
-
-    <p><strong>Agriculture</strong> plays a crucial role in supporting sustainable urban development as outlined in <strong>SDG Goal 11</strong>. By integrating agricultural practices into urban and peri-urban areas, it helps create green spaces, reduce food insecurity, and improve environmental quality.</p>
-
-    <h2>Key Focus Areas:</h2>
-    <ul>
-        <li><strong>Urban Agriculture and Planning (Target 11.3):</strong>
-            <ul>
-                <li>Enhances land use efficiency.</li>
-                <li>Links land consumption with population growth (<strong>Indicator 11.3.1</strong>).</li>
-            </ul>
-        </li>
-        <li><strong>Rural-Urban Connectivity (Target 11.A):</strong>
-            <ul>
-                <li>Promotes sustainable development by connecting urban areas with rural agricultural regions.</li>
-                <li>Encourages cities to adopt regional plans that include agriculture (<strong>Indicator 11.A.1</strong>).</li>
-            </ul>
-        </li>
-    </ul>
-
-    <h2>Case Highlights:</h2>
-    <ul>
-        <li>Visits to <strong>Agricultural Research Centers</strong>, <strong>Farms</strong>, and <strong>Market Yards</strong> demonstrate efforts to monitor and optimize agricultural operations.</li>
-        <li>Integration of <strong>Dijkstra's Algorithm</strong> in planning travel routes improves logistics and efficiency in monitoring these sites. The code can be viewed <a href="djcode.txt" target="_blank">HERE</a>. The algorithm has an efficiency of <em>|E|log|V|</em>.</li>
-        <li>Search for agriculture offices and farms is implemented using the <strong>BFSS algorithm</strong>, with worst-case efficiency of O(nm). The code can be viewed <a href="fdss.txt" target="_blank">HERE</a>. Alternative algorithms such as <strong>KMP</strong> and <strong>Boyer-Moore</strong> can also be used.</li>
-        <li>The study emphasizes the role of agriculture in enhancing urban sustainability and fostering rural-urban linkages.</li>
-    </ul>
-
-    <h2>Offices and Farms:</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Sl. No.</th>
-                <th>Office/Farm Type</th>
-                <th>Number</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Agricultural Research Centers</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Farms</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Market Yards</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Supply Chain Offices</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Farmers' Cooperatives</td>
-                <td>6</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p class="note">This case study illustrates how urban agriculture aligns with global sustainability goals and supports resilient city planning.</p>
-</body>
-</html>
-
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #000;
-        }
-        th, td {
-            padding: 8px;
-            text-align: center;
-        }
-        .figure {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .figure img {
-            max-width: 100%;
-            height: auto;
-        }
-        a {
-            color: blue;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
         .note {
             color: red;
             font-style: italic;
         }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.4rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            th, td {
+                font-size: 0.9rem;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <header>
+        <div class="header-content">
+            <h1>Agriculture Case Study</h1>
+            <p>Integrating Urban Agriculture for Sustainable Development</p>
+            <a href="#" class="btn">Home</a>
+            <a href="project-introduction.html" class="btn">Project Introduction</a>
+            <a href="team.html" class="btn">Business Cases</a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Key Insights</h2>
+            <p>Agriculture in cities and nearby areas supports <strong>SDG 11</strong> by creating green spaces, reducing food insecurity, and improving the environment. Below are the specific targets and indicators:</p>
+            <ul>
+                <li><strong>Target 11.3:</strong> Better urban planning integrates urban agriculture to optimize land use.</li>
+                <li><strong>Indicator 11.3.1:</strong> Land consumption vs. population growth.</li>
+                <li><strong>Target 11.A:</strong> Agriculture connects urban areas with rural regions for sustainable development.</li>
+                <li><strong>Indicator 11.A.1:</strong> Cities with regional plans including agriculture.</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sl. No.</th>
+                        <th>Office/Farm Type</th>
+                        <th>Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Agricultural Research Centers</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Farms</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Market Yards</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Supply Chain Offices</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Farmers' Cooperatives</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The above data is based on the city design, and the cost was estimated for travel between locations. Below is a representation of the routes:</p>
+
+            <p>An optimal route is prepared for the agricultural officer using Dijkstra's algorithm. The code can be viewed <a href="djcode.txt" target="_blank">HERE</a>. The code is implemented using a Heap data structure. The efficiency of the code is <em>|E|log|V|</em>, and the algorithm uses the greedy technique. This case study demonstrates how Dijkstra's algorithm can be used in real-world scenarios.</p>
+
+            <p>To search agriculture offices and farms, the BFS algorithm is utilized. The worst-case efficiency is <em>O(nm)</em>. The code can be viewed <a href="fdss.txt" target="_blank">HERE</a>. Advanced algorithms like KMP and Boyer-Moore can also be applied for further optimization.</p>
+        </section>
+    </main>
+ <body>
     <h1>Business Case: Agriculture Case Study</h1>
     <p><strong>Sub-task:</strong> Agricultural </p>
     <p><strong>SDG Goal:</strong> 11</p>
@@ -292,5 +352,10 @@ efficiency is in O(nm)the code can be viewed
 </body>
 </html>
 
+</body>
+
+    <footer>
+        <p>© 2024 Suratpur - Smart City Portfolio</p>
+    </footer>
 </body>
 </html>
