@@ -9,15 +9,19 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
+            background-color: #f8d7da; /* Light pink background */
         }
         h1, h2, h3 {
-            color: #2c3e50;
+            color: #000000; /* Black headings */
         }
         p, ul, li {
             font-size: 1.1em;
         }
         .section {
             margin-bottom: 40px;
+            background-color: #fff; /* White background for each section */
+            padding: 20px;
+            border-radius: 8px;
         }
         table {
             width: 100%;
@@ -38,6 +42,20 @@
         .sdg {
             font-weight: bold;
             color: #27ae60;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -62,21 +80,19 @@
             <li><strong>Prim's Algorithm:</strong>
                 <ul>
                     <li>Used for minimum spanning tree (MST) to connect various industrial zones with the least cost or distance. By adding the nearest neighboring zone to the network, Prim's ensures minimum cost for infrastructure such as roads, pipelines, and electricity lines.</li>
-                <a href="Prims_algorithm.txt" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Prim's Code</a>
-
+                    <a href="Prims_algorithm.txt" target="_blank">Prim's Code</a>
                 </ul>
             </li>
             <li><strong>Kruskal's Algorithm:</strong>
                 <ul>
                     <li>Also used for minimum spanning tree (MST). Kruskal's algorithm works by sorting all the edges in increasing order of weight (cost), and adding edges that don’t form a cycle. This can be used to optimize the construction of roads, water pipes, and electrical grid networks.</li>
-                     <a href="Kruskal.txt" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Kruskal</a>
+                    <a href="Kruskal.txt" target="_blank">Kruskal's Code</a>
                 </ul>
             </li>
             <li><strong>Boyer-Moore Algorithm:</strong>
                 <ul>
                     <li>This string-matching algorithm is useful for analyzing logs or finding patterns in industrial data, such as detecting anomalies or specific conditions in production lines or monitoring systems.</li>
-                     <a href="boyer_moore.txt" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Boyer Moore</a>
-
+                    <a href="boyer_moore.txt" target="_blank">Boyer-Moore Code</a>
                 </ul>
             </li>
         </ul>
