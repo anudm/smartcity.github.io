@@ -17,17 +17,25 @@
         /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background: linear-gradient(135deg, #ff7b7b, #ff4891, #ff3399);
             color: #333;
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 100% 0; }
+            50% { background-position: 0 100%; }
+            100% { background-position: 100% 0; }
         }
 
         /* Header */
         header {
-            background-color: #003b73;
-            color: white;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #ff3385;
             text-align: center;
             padding: 4rem 2rem;
             border-radius: 10px;
@@ -47,7 +55,7 @@
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             animation: slideIn 1s ease-out;
         }
@@ -91,7 +99,7 @@
         header .btn:hover {
             transform: translateY(-5px);
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-            background-color: #e63946;
+            background-color: #ff3399;
         }
 
         /* Main Section */
@@ -103,7 +111,7 @@
 
         h2 {
             font-size: 2rem;
-            color: #003b73;
+            color: #ff3385;
             margin-bottom: 1rem;
             text-align: center;
             animation: fadeInUp 1s ease-out;
@@ -122,7 +130,7 @@
         }
 
         .post-card {
-            background-color: white;
+            background-color: #fff;
             border-radius: 10px;
             padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -143,7 +151,7 @@
 
         .post-card h3 {
             font-size: 1.5rem;
-            color: #003b73;
+            color: #ff3385;
             margin-bottom: 0.8rem;
         }
 
@@ -162,7 +170,7 @@
 
         dl dt {
             font-weight: bold;
-            color: #003b73;
+            color: #ff3385;
             margin-top: 1rem;
         }
 
