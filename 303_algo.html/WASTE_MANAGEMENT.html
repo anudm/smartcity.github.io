@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waste Management in City Planning</title>
+    <title>Waste Management and Recycling in City Planning</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,52 +38,60 @@
     </style>
 </head>
 <body>
-    <h1>Waste Management in City Planning</h1>
+    <h1>Waste Management and Recycling in City Planning</h1>
 
     <div class="section">
-        <h2>Case Study: Waste Collection and Sorting</h2>
-        <p><strong>Objective:</strong> Optimize waste collection routes, minimize fuel consumption, and improve sorting and recycling efficiency in the city.</p>
+        <h2>Case Study: Waste Collection, Sorting, and Recycling</h2>
+        <p><strong>Objective:</strong> Optimize waste collection routes, enhance recycling processes, and minimize environmental impact in the city.</p>
 
         <h3>Challenges and Consequences:</h3>
         <ul>
-            <li>Inefficient collection routes causing excess fuel consumption.</li>
-            <li>Overflowing waste bins leading to hygiene and environmental issues.</li>
-            <li>Manual sorting errors and increased contamination in recycling.</li>
+            <li>Inefficient waste collection routes causing excess fuel consumption and time wastage.</li>
+            <li>Improper sorting of recyclables leading to contamination and loss of recyclable materials.</li>
+            <li>Lack of awareness about waste segregation at source leading to mixed waste being collected.</li>
+            <li>Limited recycling infrastructure leading to higher amounts of waste going to landfills.</li>
         </ul>
 
         <h3>Solution Approach:</h3>
-        <p>We utilize algorithms and data structures to solve the waste management challenges:</p>
+        <p>We utilize algorithms, data structures, and sorting techniques to solve the waste management and recycling challenges:</p>
 
         <ul>
             <li><strong>Algorithms:</strong>
                 <ul>
-                    <li>Vehicle Routing Problem (VRP) using Dijkstra's algorithm for shortest path routing.</li>
-                    <li>Clustering algorithms for grouping collection points based on waste volume.</li>
-                    <li>Ant Colony Optimization (ACO) for dynamic route optimization.</li>
+                    <li>Vehicle Routing Problem (VRP) using Dijkstra's algorithm for optimized waste collection routes.</li>
+                    <li>Clustering algorithms for grouping collection points based on waste volume and recycling potential.</li>
+                    <li>Ant Colony Optimization (ACO) for real-time dynamic optimization of collection routes.</li>
+                    <li>Classification algorithms to identify recyclables and non-recyclables using sensor data.</li>
                 </ul>
             </li>
             <li><strong>Data Structures:</strong>
                 <ul>
-                    <li>Graphs for modeling road networks and collection points.</li>
-                    <li>Priority Queues (Heaps) for scheduling collections based on urgency.</li>
-                    <li>Hash Tables for fast categorization of waste types.</li>
+                    <li>Graphs for modeling road networks, collection points, and recycling centers.</li>
+                    <li>Priority Queues (Heaps) for scheduling collections and prioritizing recycling bins based on fill levels.</li>
+                    <li>Hash Tables for fast categorization of waste types (recyclable vs. non-recyclable).</li>
                 </ul>
             </li>
             <li><strong>Sorting Techniques:</strong>
                 <ul>
                     <li>Quick Sort and Merge Sort for sorting waste collection points based on proximity and waste levels.</li>
-                    <li>Bucket Sort for organizing waste bins by type (e.g., recyclable, organic, etc.).</li>
+                    <li>Bucket Sort for organizing waste bins into recyclables (plastic, paper, glass, etc.).</li>
+                    <li>Radix Sort for sorting waste based on recycling categories and sorting bins by type.</li>
                 </ul>
             </li>
         </ul>
 
-        <h3>Data and Storage:</h3>
-        <p>We store waste data using databases and analyze trends with clustering algorithms. Real-time data collection via IoT sensors helps manage collection and sorting dynamically.</p>
+        <h3>Recycling Practices:</h3>
+        <p>Recycling plays a vital role in reducing the environmental impact and conserving resources. Key practices include:</p>
+        <ul>
+            <li><strong>Segregation at Source:</strong> Encouraging households and businesses to separate recyclables from general waste. This can be incentivized through educational campaigns and rewards for compliance.</li>
+            <li><strong>Automated Sorting:</strong> Using automated sorting facilities with sensors and cameras to identify recyclables such as paper, plastic, glass, and metals. These materials are then separated into specific bins for processing.</li>
+            <li><strong>Material Recovery Facilities (MRFs):</strong> Centralized facilities for sorting, cleaning, and processing recyclables. MRFs can help ensure high-quality recycled materials for reuse in the manufacturing process.</li>
+        </ul>
     </div>
 
     <div class="section">
         <h2>Waste Collection System: Example Data</h2>
-        <p>The table below represents some of the waste collection points and their details:</p>
+        <p>The table below represents some of the waste collection points, with details on the waste type, volume, and the potential recyclability of materials:</p>
         
         <table>
             <thead>
@@ -91,6 +99,7 @@
                     <th>Sl. No.</th>
                     <th>Collection Point</th>
                     <th>Waste Type</th>
+                    <th>Recyclable (Yes/No)</th>
                     <th>Last Collection Time</th>
                     <th>Waste Volume (kg)</th>
                 </tr>
@@ -100,6 +109,7 @@
                     <td>1</td>
                     <td>Park Avenue</td>
                     <td>Plastic, Organic</td>
+                    <td>Yes (Plastic)</td>
                     <td>2024-12-28 08:00</td>
                     <td>150</td>
                 </tr>
@@ -107,6 +117,7 @@
                     <td>2</td>
                     <td>Main Street</td>
                     <td>Paper, Glass</td>
+                    <td>Yes (Paper, Glass)</td>
                     <td>2024-12-27 18:30</td>
                     <td>120</td>
                 </tr>
@@ -114,6 +125,7 @@
                     <td>3</td>
                     <td>Central Square</td>
                     <td>Mixed</td>
+                    <td>No</td>
                     <td>2024-12-29 09:00</td>
                     <td>200</td>
                 </tr>
@@ -122,23 +134,25 @@
     </div>
 
     <div class="section">
-        <h2>Sorting Algorithms for Waste Sorting</h2>
-        <p>For efficient sorting, we use the following algorithms:</p>
+        <h2>Sorting Algorithms for Waste Sorting and Recycling</h2>
+        <p>For efficient sorting and recycling, we use the following algorithms:</p>
         <ul>
-            <li><strong>Quick Sort:</strong> Used to quickly categorize waste based on types (e.g., plastic, organic, etc.).</li>
-            <li><strong>Merge Sort:</strong> Helps in sorting waste bins based on their fullness, ensuring priority is given to full bins.</li>
-            <li><strong>Bucket Sort:</strong> Efficient for categorizing recyclables into predefined types such as glass, plastic, and paper.</li>
+            <li><strong>Quick Sort:</strong> Used to quickly categorize recyclables and non-recyclables based on waste type.</li>
+            <li><strong>Merge Sort:</strong> Helps in sorting waste bins by fullness and priority for collection.</li>
+            <li><strong>Bucket Sort:</strong> Efficient for categorizing recyclables like paper, plastic, glass, etc., into separate bins.</li>
+            <li><strong>Radix Sort:</strong> A stable, non-comparative sorting algorithm ideal for sorting recyclables by categories.</li>
         </ul>
-        <p class="note">These algorithms are vital for improving sorting efficiency, reducing errors, and ensuring proper recycling of waste.</p>
+        <p class="note">These sorting algorithms are essential for reducing contamination in recycling bins and ensuring proper waste management.</p>
     </div>
 
     <div class="section">
-        <h2>Real-Time Monitoring and Data Analysis</h2>
-        <p>Waste data is collected and analyzed to optimize collection schedules:</p>
+        <h2>Real-Time Monitoring, Data Analysis, and Recycling Optimization</h2>
+        <p>Real-time data is collected and analyzed to optimize collection schedules and improve recycling:</p>
         <ul>
-            <li>IoT sensors in bins monitor fill levels in real time.</li>
-            <li>Data is processed using predictive algorithms like Linear Regression to forecast waste levels.</li>
-            <li>Clustering algorithms (e.g., K-Means) are used to group neighborhoods with similar waste generation patterns for optimized scheduling.</li>
+            <li>IoT sensors installed in waste bins provide real-time fill-level data.</li>
+            <li>Data is processed using machine learning models to predict waste generation and optimize collection schedules.</li>
+            <li>Clustering algorithms (e.g., K-Means) group neighborhoods with similar waste generation patterns for efficient recycling collection.</li>
+            <li>Classification algorithms (e.g., Support Vector Machines) are used to automatically sort recyclables from non-recyclables at collection points.</li>
         </ul>
     </div>
 </body>
