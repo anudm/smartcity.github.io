@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Plan for Healthcare Sector - SDG Goal 11 Case Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .blue-button {
+            background-color: #007BFF;
+            color: white;
+        }
+        .blue-button:hover {
+            background-color: #0056b3;
+        }
+        .white-button {
+            background-color: white;
+            color: #007BFF;
+            border: 2px solid #007BFF;
+        }
+        .white-button:hover {
+            background-color: #f0f0f0;
+        }
+        .note {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>City Plan for Healthcare Sector - SDG Goal 11 Case Study</h1>
+    <p><strong>Total City Area:</strong> 1500 sq km</p>
+    <p><strong>Healthcare Sector Area:</strong> 150 sq km</p>
+
+    <h2>SDG Goal 11: Sustainable Cities and Communities</h2>
+    <p><strong>SDG Goal:</strong> 11</p>
+    <p><strong>Target 11.5:</strong> Reduce the adverse effects of disasters, including deaths and economic losses, in urban areas.</p>
+    <p><strong>Indicator 11.5.1:</strong> Number of deaths, missing persons, and directly affected persons attributed to disasters per 100,000 population.</p>
+
+    <h2>Healthcare Sector Planning Overview:</h2>
+    <p>The healthcare sector area includes the following zones:</p>
+    <ul>
+        <li>Hospitals (8 zones)</li>
+        <li>Primary Health Centers (10 zones)</li>
+        <li>Emergency Care Units (4 zones)</li>
+        <li>Specialty Clinics (5 zones)</li>
+        <li>Research Laboratories (3 zones)</li>
+    </ul>
+
+    <p>These zones are designed to provide comprehensive healthcare services, ensure quick disaster response, and reduce urban healthcare disparities. Below is a table representing the healthcare infrastructure types and their respective zones:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sl. No.</th>
+                <th>Infrastructure Type</th>
+                <th>Zones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Hospitals</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Primary Health Centers</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Emergency Care Units</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Specialty Clinics</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Research Laboratories</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Solutions and Algorithms:</h2>
+    <h3>1. Floyd-Warshall Algorithm:</h3>
+    <p>This algorithm is used to find the shortest paths between all pairs of healthcare zones. It helps optimize ambulance routing and resource allocation during disasters. By calculating the shortest path matrix, it ensures that patients and medical supplies reach their destinations quickly.</p>
+    <a href="floyd_warshall.txt" target="_blank" class="blue-button">Floyd-Warshall</a>
+
+    <h3>2. Heap Data Structure:</h3>
+    <p>Heaps are used to prioritize tasks in emergency situations, such as triaging patients or scheduling equipment use. For instance, a min-heap can be utilized to dispatch ambulances to the most critical zones with the least response time.</p>
+    <a href="heap_ds.txt" target="_blank" class="white-button">Heap DS</a>
+
+    <h3>3. Sorting with Insertion Sort:</h3>
+    <p>Insertion Sort is applied for organizing patient data, such as sorting patients by urgency levels or medical records by time stamps. Its simplicity and in-place sorting mechanism make it ideal for small datasets used in local healthcare centers.</p>
+    <a href="insertion_sort.txt" target="_blank" class="blue-button">Insertion Sort</a>
+
+    <h2>Key Focus Areas:</h2>
+    <ul>
+        <li>Urban Planning: Efficient integration of healthcare facilities into the city layout.</li>
+        <li>Disaster Management: Quick response and resource optimization during medical emergencies.</li>
+        <li>Data Organization: Leveraging sorting and heap structures to manage healthcare data efficiently.</li>
+        <li>Resource Allocation: Optimal routing and task prioritization using algorithms like Floyd-Warshall and heap structures.</li>
+    </ul>
+
+    <p class="note">This case study demonstrates how urban healthcare planning can leverage algorithms and data structures to achieve SDG Goal 11 targets effectively.</p>
+</body>
+</html>
