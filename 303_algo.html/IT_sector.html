@@ -1,1 +1,160 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kruskal's Algorithm - Network Infrastructure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #graph, #mst {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kruskal's Algorithm - Minimum Spanning Tree for Network Infrastructure</h1>
+    <p>This example demonstrates Kruskal's algorithm to connect data centers, tech hubs, and devices with the least cost.</p>
+
+    <div id="graph">
+        <h3>Graph: List of Edges with Costs</h3>
+        <table id="edges">
+            <thead>
+                <tr>
+                    <th>Node 1</th>
+                    <th>Node 2</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>A</td><td>B</td><td>4</td></tr>
+                <tr><td>A</td><td>C</td><td>3</td></tr>
+                <tr><td>B</td><td>C</td><td>1</td></tr>
+                <tr><td>B</td><td>D</td><td>2</td></tr>
+                <tr><td<C</td><td>D</td><td>5</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="mst">
+        <h3>Minimum Spanning Tree</h3>
+        <table id="mst-edges">
+            <thead>
+                <tr>
+                    <th>Node 1</th>
+                    <th>Node 2</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- MST edges will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <button onclick="applyKruskal()">Run Kruskal's Algorithm</button>
+
+    <script>
+        // Data for the graph: each edge has two nodes and a cost
+        const edges = [
+            { node1: 'A', node2: 'B', cost: 4 },
+            { node1: 'A', node2: 'C', cost: 3 },
+            { node1: 'B', node2: 'C', cost: 1 },
+            { node1: 'B', node2: 'D', cost: 2 },
+            { node1: 'C', node2: 'D', cost: 5 }
+        ];
+
+        // Union-Find (Disjoint Set Union) class
+        class DisjointSet {
+            constructor(n) {
+                this.parent = [];
+                this.rank = [];
+                for (let i = 0; i < n; i++) {
+                    this.parent[i] = i;
+                    this.rank[i] = 0;
+                }
+            }
+
+            find(u) {
+                if (this.parent[u] !== u) {
+                    this.parent[u] = this.find(this.parent[u]);
+                }
+                return this.parent[u];
+            }
+
+            union(u, v) {
+                const rootU = this.find(u);
+                const rootV = this.find(v);
+                
+                if (rootU !== rootV) {
+                    // Union by rank
+                    if (this.rank[rootU] > this.rank[rootV]) {
+                        this.parent[rootV] = rootU;
+                    } else if (this.rank[rootU] < this.rank[rootV]) {
+                        this.parent[rootU] = rootV;
+                    } else {
+                        this.parent[rootV] = rootU;
+                        this.rank[rootU]++;
+                    }
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        // Function to apply Kruskal's algorithm
+        function applyKruskal() {
+            const nodes = ['A', 'B', 'C', 'D'];
+            const ds = new DisjointSet(nodes.length);
+
+            // Sort edges by cost
+            edges.sort((a, b) => a.cost - b.cost);
+
+            const mstEdges = [];
+
+            // Process each edge
+            for (const edge of edges) {
+                const u = nodes.indexOf(edge.node1);
+                const v = nodes.indexOf(edge.node2);
+
+                // If adding this edge doesn't form a cycle, add it to the MST
+                if (ds.union(u, v)) {
+                    mstEdges.push(edge);
+                }
+            }
+
+            // Display the MST
+            displayMST(mstEdges);
+        }
+
+        // Function to display the MST in the table
+        function displayMST(mstEdges) {
+            const mstTable = document.getElementById('mst-edges').getElementsByTagName('tbody')[0];
+            mstTable.innerHTML = '';  // Clear the table
+
+            mstEdges.forEach(edge => {
+                const row = mstTable.insertRow();
+                row.insertCell(0).textContent = edge.node1;
+                row.insertCell(1).textContent = edge.node2;
+                row.insertCell(2).textContent = edge.cost;
+            });
+        }
+    </script>
+
+</body>
+</html>
