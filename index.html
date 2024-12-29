@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart City Design</title>
+    <title>Smart City Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <style>
         /* Reset default margin and padding */
         * {
@@ -17,35 +16,30 @@
         /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f5c6cb, #ff6fa2, #ff3385);
+            background-color: #fce4ec; /* Light Pink background */
             color: #333;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-size: 400% 400%;
-            animation: gradientAnimation 10s ease infinite;
-        }
-
-        @keyframes gradientAnimation {
-            0% { background-position: 100% 0; }
-            50% { background-position: 0 100%; }
-            100% { background-position: 100% 0; }
+            background-size: cover;
         }
 
         /* Header */
         header {
-            background-color: rgba(255, 255, 255, 0.85);
-            color: #ff3385;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #ff5f6d;
             text-align: center;
             padding: 4rem 2rem;
             border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 1100px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: #ff3385;
         }
 
         header p {
@@ -54,9 +48,9 @@
         }
 
         header .btn {
-            background-color: #ff5c5c;
+            background-color: #ff5f6d;
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
@@ -68,13 +62,13 @@
 
         header .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
             background-color: #ff3385;
         }
 
         /* Main Section */
         main {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -82,7 +76,7 @@
         h2 {
             font-size: 2rem;
             color: #ff3385;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             text-align: center;
         }
 
@@ -96,9 +90,10 @@
         .post-card {
             background-color: white;
             border-radius: 10px;
-            padding: 1.5rem;
+            padding: 2rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
         }
 
         .post-card:hover {
@@ -107,9 +102,9 @@
         }
 
         .post-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #ff3385;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .post-card p {
@@ -120,11 +115,122 @@
         /* Portfolio Info */
         dl {
             background-color: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
 
         dl dt {
             font-weight: bold;
-            color: #ff338
+            color: #ff3385;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        dl dd {
+            margin: 0;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.4rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .post-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .post-card p {
+                font-size: 0.9rem;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>SURATPUR SMART CITY</h1>
+            <p>Welcome to Our Team Portfolio on Smart City Project</p>
+            <a href="#" class="btn">Home</a>
+            <a href="project-introduction.html" class="btn">Project Introduction</a>
+            <a href="team.html" class="btn">Business Cases</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="recent-posts">
+            <h2>COURSE INTRODUCTION</h2>
+            <div class="post-grid">
+                <div class="post-card">
+                    <h3>What is the course about?</h3>
+                    <p>
+                        The Design and Analysis of Algorithms course is all about developing a deep understanding of how algorithms work, how they are designed, and how they can be optimized for efficiency.
+                        This course emphasizes:
+                        <ul>
+                            <li>The systematic design of algorithms.</li>
+                            <li>The analysis of their time and space complexities.</li>
+                            <li>The application of mathematical tools to compare algorithm performance.</li>
+                        </ul>
+                        By studying this, I have gained the skills to approach problems systematically, design solutions, and measure their efficiency.
+                    </p>
+                </div>
+                <div class="post-card">
+                    <h3>What kind of data structures and algorithms have I studied?</h3>
+                    <p>
+                        During the course, I explored a variety of data structures and algorithms, including:
+                        <ul>
+                            <li>Data Structures: Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables.</li>
+                            <li>Algorithms: Sorting algorithms like Merge Sort and Quick Sort, graph algorithms like Dijkstra’s and Kruskal’s, and advanced string matching algorithms like Rabin-Karp and Boyer-Moore.</li>
+                        </ul>
+                        Each topic built upon the foundational knowledge, helping me to analyze problems from different perspectives and apply the most suitable data structure or algorithm.
+                    </p>
+                </div>
+                <div class="post-card">
+                    <h3>Connection with the Real World</h3>
+                    <p>
+                        The concepts learned in this course are directly applicable to real-world challenges. From optimizing search engines to designing efficient networks, the knowledge of algorithms and data structures is vital in creating scalable solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-info">
+            <h2>Why is this course important?</h2>
+            <dl>
+                <dt>Building Skills for the Future</dt>
+                <dd>
+                    This course is a stepping stone for anyone aspiring to excel in fields like software engineering, competitive programming, and machine learning. It lays the foundation for efficient problem-solving, a skill crucial in today’s fast-paced technological world.
+                </dd>
+
+                <dt>Understanding Algorithms and Data Structures</dt>
+                <dd>
+                    Through this learning portfolio, I aim to demonstrate my understanding and enthusiasm for algorithms and data structures, reflecting on how they shape the software and tools we use daily.
+                </dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Suratpur - Smart City Portfolio</p>
+    </footer>
+</body>
+</html>
