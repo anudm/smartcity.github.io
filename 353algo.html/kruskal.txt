@@ -1,13 +1,9 @@
 KRUSKAL'S ALGORITHM
 #include <iostream>
-
 using namespace std;
-
-
 struct Edge {
     int u, v, weight;
 };
-
 int find(int parent[], int a, int b) {
     if (parent[a] == parent[b]) {
         return 1;  
@@ -15,7 +11,6 @@ int find(int parent[], int a, int b) {
         return 0;  
     }
 }
-
 void unions(int parent[], int n, int a, int b) {
     int temp = parent[a];
     for (int i = 0; i < n; i++) {
@@ -24,8 +19,6 @@ void unions(int parent[], int n, int a, int b) {
         }
     }
 }
-
-
 void selectionSort(Edge edges[], int E) {
     for (int i = 0; i < E - 1; i++) {
         for (int j = i + 1; j < E; j++) {
@@ -38,35 +31,23 @@ void selectionSort(Edge edges[], int E) {
         }
     }
 }
-
-
 void kruskal(int V, int E, Edge edges[]) {
-    
-    selectionSort(edges, E);
-
-    int parent[V];
-
-    for (int i = 0; i < V; i++) {
+     selectionSort(edges, E);
+  int parent[V];
+ for (int i = 0; i < V; i++) {
         parent[i] = i;
     }
-
-    int mstw = 0;  
-    int edgeCount = 0;  
-
-    
-    for (int i = 0; i < E; i++) {
+  int mstw = 0;  
+  int edgeCount = 0;  
+  for (int i = 0; i < E; i++) {
         int u = edges[i].u;
         int v = edges[i].v;
         int weight = edges[i].weight;
-
-        
         if (!find(parent, u, v)) {  
             cout << u << " - " << v << " : " << weight << endl;
             mstw += weight;
             unions(parent, V, u, v);  
             edgeCount++;
-
-            
             if (edgeCount == V - 1) {
                 break;
             }
@@ -82,9 +63,7 @@ int main() {
     cin >> V;
     cout << "Enter number of edges: ";
     cin >> E;
-
-    
-    Edge edges[E];
+     Edge edges[E];
 
     cout << "Enter edges (u, v, weight):\n";
     for (int i = 0; i < E; i++) {
