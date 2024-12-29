@@ -1,0 +1,58 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// Function to create the Bad Character Heuristic table
+vector<int> badCharacterHeuristic(const string& pattern) {
+    vector<int> badChar(256, -1);  // For all ASCII characters
+    
+    // Fill the badChar table with the index of each character in the pattern
+    for (int i = 0; i < pattern.length(); i++) {
+        badChar[pattern[i]] = i;
+    }
+    return badChar;
+}
+
+// Boyer-Moore Algorithm for pattern searching
+void boyerMooreSearch(const string& text, const string& pattern) {
+    int m = pattern.length();
+    int n = text.length();
+    
+    // Step 1: Preprocess the pattern (Bad Character Heuristic)
+    vector<int> badChar = badCharacterHeuristic(pattern);
+    
+    int s = 0;  // s is the shift of the pattern relative to the text
+    
+    // Step 2: Start matching the pattern with the text
+    while (s <= n - m) {
+        int j = m - 1;
+        
+        // Compare pattern from right to left
+        while (j >= 0 && pattern[j] == text[s + j]) {
+            j--;
+        }
+        
+        // If the pattern is found (j == -1)
+        if (j < 0) {
+            cout << "Pattern found at index " << s << endl;
+            
+            // Shift the pattern to the right based on the bad character heuristic
+            s += (s + m < n) ? m - badChar[text[s + m]] : 1;
+        } else {
+            // Shift the pattern based on the bad character heuristic
+            s += max(1, j - badChar[text[s + j]]);
+        }
+    }
+}
+
+// Main function to test the Boyer-Moore search algorithm
+int main() {
+    string text = "ABAAABCDABCABCDABDE";
+    string pattern = "ABCAB";
+    
+    boyerMooreSearch(text, pattern);
+    
+    return 0;
+}
