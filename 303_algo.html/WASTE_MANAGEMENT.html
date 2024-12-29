@@ -9,12 +9,18 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
+            background-color: #F8E1F4; /* Light pink background */
+            color: #000; /* Black text color */
         }
         h1, h2 {
             color: #2c3e50;
         }
+        h3 {
+            color: #4CAF50;
+        }
         p, ul, li {
             font-size: 1.1em;
+            color: #333;
         }
         .note {
             color: red;
@@ -24,16 +30,47 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            background-color: #fff; /* White background for table */
         }
         table, th, td {
             border: 1px solid #000;
         }
         th, td {
-            padding: 8px;
+            padding: 12px;
             text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
         }
         .section {
             margin-bottom: 40px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #e74c3c;
+        }
+        .section h3 {
+            color: #3498db;
+        }
+        a {
+            padding: 10px 20px;
+            background-color: #FF66B2; /* Pink buttons */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        a:hover {
+            background-color: #FF3385; /* Darker pink on hover */
+        }
+        ul {
+            margin-left: 20px;
         }
     </style>
 </head>
@@ -70,7 +107,9 @@
                     <li>Classification algorithms to identify recyclables and non-recyclables using sensor data.</li>
                 </ul>
             </li>
-                <a href="Dijkstra_algo.txt" target="_blank" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Dijkstra</a>
+            <div>
+                <a href="Dijkstra_algo.txt" target="_blank">Dijkstra</a>
+            </div>
 
             <li><strong>Data Structures:</strong>
                 <ul>
@@ -79,17 +118,20 @@
                     <li>Hash Tables for fast categorization of waste types (recyclable vs. non-recyclable).</li>
                 </ul>
             </li>
-                <a href="heap_ds.txt" target="_blank" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Heap DS</a>
-                <a href="Hash_tables.txt" target="_blank" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Hashtables</a>
+            <div>
+                <a href="heap_ds.txt" target="_blank">Heap DS</a>
+                <a href="Hash_tables.txt" target="_blank">Hashtables</a>
+            </div>
 
             <li><strong>Sorting Techniques:</strong>
                 <ul>
                     <li>Quick Sort and Merge Sort for sorting waste collection points based on proximity and waste levels.</li>
                 </ul>
             </li>
-
-            <a href="Quick_sort.txt" target="_blank" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Quick Sort</a>
-            <a href="Merge_sort.txt" target="_blank" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Merge Sort</a>
+            <div>
+                <a href="Quick_sort.txt" target="_blank">Quick Sort</a>
+                <a href="Merge_sort.txt" target="_blank">Merge Sort</a>
+            </div>
         </ul>
 
         <h3>Recycling Practices:</h3>
@@ -151,7 +193,6 @@
         <ul>
             <li><strong>Quick Sort:</strong> Used to quickly categorize recyclables and non-recyclables based on waste type.</li>
             <li><strong>Merge Sort:</strong> Helps in sorting waste bins by fullness and priority for collection.</li>
-
         </ul>
         <p class="note">These sorting algorithms are essential for reducing contamination in recycling bins and ensuring proper waste management.</p>
     </div>
