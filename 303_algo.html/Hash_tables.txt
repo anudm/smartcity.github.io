@@ -1,0 +1,95 @@
+#include <iostream>
+#include <list>
+#include <iterator>
+#include <string>
+
+using namespace std;
+
+// Define the HashTable class
+class HashTable {
+private:
+    static const int hashSize = 10;  // Size of the hash table
+    list<pair<int, string>> table[hashSize];  // Array of lists to handle collisions
+
+public:
+    // Hash function to map values to key
+    int hashFunction(int key) {
+        return key % hashSize;
+    }
+
+    // Insert a key-value pair into the hash table
+    void insert(int key, string value) {
+        int index = hashFunction(key);  // Find the hash index
+        table[index].push_back(make_pair(key, value));  // Add the pair to the list at that index
+    }
+
+    // Search for a value by key in the hash table
+    string search(int key) {
+        int index = hashFunction(key);  // Find the hash index
+        for (auto& pair : table[index]) {
+            if (pair.first == key) {
+                return pair.second;  // Return the value if the key is found
+            }
+        }
+        return "Not Found";  // Return "Not Found" if the key is not in the table
+    }
+
+    // Remove a key-value pair from the hash table
+    void remove(int key) {
+        int index = hashFunction(key);  // Find the hash index
+        list<pair<int, string>>& bucket = table[index];  // Get the list at that index
+
+        // Iterate through the list to find and remove the key-value pair
+        for (auto it = bucket.begin(); it != bucket.end(); ++it) {
+            if (it->first == key) {
+                bucket.erase(it);  // Erase the pair if the key matches
+                cout << "Key " << key << " removed." << endl;
+                return;
+            }
+        }
+        cout << "Key " << key << " not found." << endl;  // If the key is not found
+    }
+
+    // Display the hash table
+    void display() {
+        for (int i = 0; i < hashSize; i++) {
+            if (!table[i].empty()) {
+                cout << "Bucket " << i << ": ";
+                for (auto& pair : table[i]) {
+                    cout << "{" << pair.first << ": " << pair.second << "} ";
+                }
+                cout << endl;
+            }
+        }
+    }
+};
+
+// Main function to test the hash table
+int main() {
+    HashTable ht;
+
+    // Inserting some key-value pairs
+    ht.insert(1, "Apple");
+    ht.insert(2, "Banana");
+    ht.insert(12, "Orange");
+    ht.insert(22, "Grapes");
+
+    // Display the hash table
+    cout << "Hash Table:" << endl;
+    ht.display();
+
+    // Searching for a key
+    cout << "\nSearching for key 2: " << ht.search(2) << endl;
+
+    // Removing a key-value pair
+    ht.remove(12);
+    
+    // Display the hash table after removal
+    cout << "\nHash Table after removal:" << endl;
+    ht.display();
+
+    // Searching for a removed key
+    cout << "\nSearching for key 12: " << ht.search(12) << endl;
+
+    return 0;
+}
