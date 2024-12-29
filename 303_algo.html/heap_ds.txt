@@ -1,1 +1,100 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class MaxHeap {
+private:
+    vector<int> heap;  // Vector to store the heap elements
+
+    // Helper function to maintain the max-heap property by "bubbling down" the element at index i
+    void heapifyDown(int i) {
+        int leftChild = 2 * i + 1;  // Left child index
+        int rightChild = 2 * i + 2; // Right child index
+        int largest = i;
+
+        // If left child is larger than the current node
+        if (leftChild < heap.size() && heap[leftChild] > heap[largest]) {
+            largest = leftChild;
+        }
+
+        // If right child is larger than the current largest node
+        if (rightChild < heap.size() && heap[rightChild] > heap[largest]) {
+            largest = rightChild;
+        }
+
+        // If the largest element is not the current node, swap and heapify further
+        if (largest != i) {
+            swap(heap[i], heap[largest]);
+            heapifyDown(largest);  // Recursively heapify the affected subtree
+        }
+    }
+
+    // Helper function to maintain the max-heap property by "bubbling up" the element at index i
+    void heapifyUp(int i) {
+        while (i > 0 && heap[i] > heap[(i - 1) / 2]) {
+            swap(heap[i], heap[(i - 1) / 2]);
+            i = (i - 1) / 2;
+        }
+    }
+
+public:
+    // Insert a new element into the heap
+    void insert(int value) {
+        heap.push_back(value);  // Add the element at the end
+        heapifyUp(heap.size() - 1);  // Maintain heap property by bubbling up the last element
+    }
+
+    // Remove and return the maximum element (root) from the heap
+    int extractMax() {
+        if (heap.empty()) {
+            cout << "Heap is empty!" << endl;
+            return -1;  // Return a sentinel value for empty heap
+        }
+
+        int maxElement = heap[0];  // The root element (max element in a max-heap)
+        heap[0] = heap.back();  // Move the last element to the root
+        heap.pop_back();  // Remove the last element
+
+        heapifyDown(0);  // Maintain heap property by bubbling down the new root element
+
+        return maxElement;
+    }
+
+    // Get the maximum element (root) without removing it
+    int getMax() {
+        if (heap.empty()) {
+            cout << "Heap is empty!" << endl;
+            return -1;  // Return a sentinel value for empty heap
+        }
+        return heap[0];
+    }
+
+    // Print the heap elements
+    void printHeap() {
+        for (int i = 0; i < heap.size(); i++) {
+            cout << heap[i] << " ";
+        }
+        cout << endl;
+    }
+};
+
+int main() {
+    MaxHeap maxHeap;
+
+    maxHeap.insert(10);
+    maxHeap.insert(20);
+    maxHeap.insert(5);
+    maxHeap.insert(30);
+    maxHeap.insert(15);
+
+    cout << "Max-Heap after insertions: ";
+    maxHeap.printHeap();
+
+    cout << "Extracted max: " << maxHeap.extractMax() << endl;
+
+    cout << "Max-Heap after extraction: ";
+    maxHeap.printHeap();
+
+    return 0;
+}
 
