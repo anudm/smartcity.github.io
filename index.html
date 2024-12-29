@@ -17,7 +17,7 @@
         /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ff7b7b, #ff4891, #ff3399);
+            background: linear-gradient(135deg, #f5c6cb, #ff6fa2, #ff3385);
             color: #333;
             line-height: 1.6;
             margin: 0;
@@ -34,46 +34,23 @@
 
         /* Header */
         header {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.85);
             color: #ff3385;
             text-align: center;
             padding: 4rem 2rem;
             border-radius: 10px;
             margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        header .header-content {
-            max-width: 800px;
-            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            animation: slideIn 1s ease-out;
-        }
-
-        @keyframes slideIn {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(0); }
         }
 
         header p {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
-            animation: fadeInText 2s ease-out;
-        }
-
-        @keyframes fadeInText {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
         }
 
         header .btn {
@@ -87,19 +64,12 @@
             display: inline-block;
             margin: 0.5rem;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            animation: fadeInButtons 2s 1s forwards;
-        }
-
-        @keyframes fadeInButtons {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
         }
 
         header .btn:hover {
             transform: translateY(-5px);
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-            background-color: #ff3399;
+            background-color: #ff3385;
         }
 
         /* Main Section */
@@ -114,12 +84,6 @@
             color: #ff3385;
             margin-bottom: 1rem;
             text-align: center;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
         }
 
         .post-grid {
@@ -130,18 +94,11 @@
         }
 
         .post-card {
-            background-color: #fff;
+            background-color: white;
             border-radius: 10px;
             padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: fadeInCard 1s ease-out forwards;
-        }
-
-        @keyframes fadeInCard {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+            transition: transform 0.3s ease;
         }
 
         .post-card:hover {
@@ -170,109 +127,4 @@
 
         dl dt {
             font-weight: bold;
-            color: #ff3385;
-            margin-top: 1rem;
-        }
-
-        dl dd {
-            margin: 0;
-            color: #333;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #555;
-            opacity: 0;
-            animation: fadeInFooter 1.5s 2s forwards;
-        }
-
-        @keyframes fadeInFooter {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.4rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            .post-card h3 {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <h1>SURATPUR</h1>
-            <p>WELCOME TO OUR TEAM PORTFOLIO ON SMART CITY PROJECT</p>
-            <a href="#" class="btn">Home</a>
-            <a href="project introduction.html" class="btn">Project Introduction</a>
-            <a href="team.html" class="btn">Business Cases</a>
-        </div>
-    </header>
-
-    <main>
-        <section class="recent-posts">
-            <h2>COURSE INTRODUCTION</h2>
-            <div class="post-grid">
-                <div class="post-card">
-                    <h3>What is the course about?</h3>
-                    <p>
-                        The Design and Analysis of Algorithms course is all about developing a deep understanding of how algorithms work, how they are designed, and how they can be optimized for efficiency.
-                        This course emphasizes:
-                        <ul>
-                            <li>The systematic design of algorithms.</li>
-                            <li>The analysis of their time and space complexities.</li>
-                            <li>The application of mathematical tools to compare algorithm performance.</li>
-                        </ul>
-                        By studying this, I have gained the skills to approach problems systematically, design solutions, and measure their efficiency.
-                    </p>
-                </div>
-                <div class="post-card">
-                    <h3>What kind of data structures and algorithms have I studied?</h3>
-                    <p>
-                        During the course, I explored a variety of data structures and algorithms, including:
-                        <ul>
-                            <li>Data Structures: Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables.</li>
-                            <li>Algorithms: Sorting algorithms like Merge Sort and Quick Sort, graph algorithms like Dijkstra’s and Kruskal’s, and advanced string matching algorithms like Rabin-Karp and Boyer-Moore.</li>
-                        </ul>
-                        Each topic built upon the foundational knowledge, helping me to analyze problems from different perspectives and apply the most suitable data structure or algorithm.
-                    </p>
-                </div>
-                <div class="post-card">
-                    <h3>CONNECTION WITH REAL WORLD</h3>
-                    <p>
-                        The concepts learned in this course are directly applicable to real-world challenges. From optimizing search engines to designing efficient networks, the knowledge of algorithms and data structures is vital in creating scalable solutions.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="portfolio-info">
-            <h2>Why is this course important?</h2>
-            <dl>
-                <p>
-                    This course is a stepping stone for anyone aspiring to excel in fields like software engineering, competitive programming, and machine learning. It lays the foundation for efficient problem-solving, a skill crucial in today’s fast-paced technological world.
-                </p>
-                <p>
-                    Through this learning portfolio, I aim to demonstrate my understanding and enthusiasm for algorithms and data structures, reflecting on how they shape the software and tools we use daily.
-                </p>
-            </dl>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2024 Ananya - Personal Portfolio</p>
-    </footer>
-</body>
-</html>
+            color: #ff338
