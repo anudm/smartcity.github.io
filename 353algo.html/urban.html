@@ -147,33 +147,59 @@
             <p><strong>Fig 1:</strong> Sustainable Urbanization Map</p>
         </div>
 
-        <h2>Objectives</h2>
+       <p>The data above reflects the current distribution of green spaces and sustainability efforts in the city. Below is a visual representation of the locations:</p>
+
+    <div class="figure">
+        <img src="path-to-your-image/urbanization-map.png" alt="Sustainable Urbanization Map">
+        <p><strong>Fig 1:</strong> Sustainable Urbanization Map</p>
+    </div>
+
+    <h2>Objective</h2>
+    <p>To enhance accessibility, reduce travel costs, and prioritize green space projects for sustainable development.</p>
+
+    <h2>Steps and Applications</h2>
+
+    <h3>1. Optimizing Green Space Connectivity</h3>
+    <p class="highlight">Using <strong>Kruskal’s Algorithm</strong>, planners developed a Minimum Spanning Tree that connects 10 green spaces with minimal road construction costs.</p>
+    <h2>Kruskal’s Algorithm</h2>
+        <p>Kruskal’s algorithm is a Greedy algorithm used for finding the minimum spanning tree of a graph. It sorts all the edges in increasing order of their weights and adds them one by one to the spanning tree, provided they do not form a cycle. To view the code of kruskal's <a href="kruskal.txt">click here</a>
+</p>
+        <p>Key points:</p>
         <ul>
-            <li>Enhance accessibility to green spaces.</li>
-            <li>Reduce travel costs for residents.</li>
-            <li>Prioritize projects that align with sustainability goals.</li>
+            <li>Sorts the edges and adds them in sequence if no cycles are formed.</li>
+            <li>It is used for finding the Minimum Spanning Tree (MST) of a graph.</li>
+            <li>Falls under the Greedy technique.</li>
+            <li>With an efficient union-find algorithm, the time complexity is dominated by the sorting step, resulting in an overall time complexity of O(|E| log |E|), where E is the number of edges.</li>
         </ul>
-
-        <h2>Algorithms in Action</h2>
-        <h3>1. Optimizing Connectivity</h3>
-        <p>Using <strong>Kruskal’s Algorithm</strong>, a Minimum Spanning Tree was developed to connect green spaces efficiently. <a href="kruskal.txt">View Code</a></p>
-
-        <h3>2. Analyzing Accessibility</h3>
-        <p>The <strong>Floyd-Warshall Algorithm</strong> identified shortest paths, enabling planners to improve travel efficiency. <a href="floyds.txt">View Code</a></p>
-
-        <h3>3. Prioritizing Development</h3>
-        <p>Projects were ranked using <strong>Merge Sort</strong>, ensuring timely execution of high-impact initiatives. <a href="merge.txt">View Code</a></p>
-
-        <h2>Impact</h2>
-        <ul>
-            <li>Development costs reduced by 20%.</li>
-            <li>Travel times to public facilities reduced by 15%.</li>
-            <li>Efficient prioritization of key development projects.</li>
+    <h3>2. Analyzing Accessibility</h3>
+    <p class="highlight">The <strong>Floyd-Warshall Algorithm</strong> identified the shortest paths between key locations, such as:</p>
+    <ul>
+        <li>Parks</li>
+        <li>Recycling centers</li>
+        <li>Public transport hubs</li>
+    </ul>
+    <p>Interventions were proposed for areas with high travel times.</p>
+   <ul>
+            <li>Based on the principle of Kleene’s Theorem.</li>
+            <li>Used for All-Pairs Shortest Path problems.</li>
+            <li>Falls under the dynamic programming technique (principle of optimality).</li>
+            <li>The algorithm has cubic time complexity, i.e., O(|V|^3), where V is the number of vertices in the graph.To view code  <a href="floyds.txt">click here</a></li>
         </ul>
-    </main>
-
-    <footer>
-        <p>© 2024 Suratpur Smart City - Sustainable Urbanization Initiative</p>
-    </footer>
+    <h3>3. Prioritizing Development Projects</h3>
+    <p class="highlight">Projects were ranked based on urgency and impact using <strong>Merge Sort</strong>. Top projects include:</p>
+    <ul>
+        <li>Converting unused land into parks</li>
+        <li>Upgrading roads to reduce travel times</li>
+    </ul>
+    <h2>Merge Sort</h2>
+        <p>Merge Sort is a divide and conquer algorithm for sorting an array. It divides the array into two halves, recursively sorts them, and then merges the sorted halves to produce the sorted array.</p>
+        <p>Merge Sort has an efficiency of O(n log n), where n is the number of elements in the array being sorted. To view code  <a href="merge.txt">click here</a></p>
+   
+    <h2>Impact</h2>
+    <ul>
+        <li>Reduced costs of developing green spaces by 20% using the MST approach.</li>
+        <li>Improved accessibility to public facilities, reducing average travel times by 15%.</li>
+        <li>Timely execution of high-impact projects through data-driven prioritization.</li>
+    </ul>
 </body>
 </html>
